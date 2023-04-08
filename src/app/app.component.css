@@ -23,12 +23,10 @@ header {
 
 /*навигация*/
 
-nav {
-  margin: 19px 0 19px 0;
-}
-
 nav a {
-  margin-right: 31px;
+  display: inline-block;
+  margin: 0 31px 0 0;
+  padding: 19px 0 19px 0;
   font-family: 'Inter', serif;
   font-style: normal;
   font-weight: 600;
@@ -38,4 +36,12 @@ nav a {
 
 nav a:last-child {
   margin-right: 0;
+}
+
+nav a:hover {
+  color: #43AA72;
+}
+
+nav a:active {
+  color: #2A8955;
 }
