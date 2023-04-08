@@ -1,3 +1,7 @@
+:root{
+  --tui-carousel-padding: 0px;
+}
+
 body {
   margin: 0;
 }

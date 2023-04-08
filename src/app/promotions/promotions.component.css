@@ -1,11 +1,3 @@
-fieldset {
-  padding: 0 !important;
-}
-
-:root {
-  --tui-carousel-padding: 0;
-}
-
 .promotion-img {
   width: 100%;
   border-radius: 22px;
