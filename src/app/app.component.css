@@ -1,6 +1,7 @@
 .media {
-  width: min(1276px, 100%);
+  width: min(1306px, calc(100% - 30px));
   margin: 0 auto 0 auto;
+  padding: 0 15px 0 15px;
 }
 
 header {
