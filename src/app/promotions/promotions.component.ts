@@ -7,7 +7,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PromotionsComponent {
-  index = 2;
+  index = 0;
 
   readonly items = [
     'assets/img/promotion1.png',
