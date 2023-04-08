@@ -1,0 +1,13 @@
+<tui-carousel [duration]="4000" [(index)]="index">
+  <ng-container *ngFor="let item of items">
+    <tui-island *tuiItem>
+      <img class="promotion-img" [attr.src]="item" alt="promotion">
+    </tui-island>
+  </ng-container>
+</tui-carousel>
+<tui-pagination
+  size="s"
+  class="pagination"
+  [length]="items.length"
+  [(index)]="index"
+></tui-pagination>

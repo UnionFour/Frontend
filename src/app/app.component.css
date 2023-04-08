@@ -1,47 +1,5 @@
-/*лента*/
-
 .media {
   width: min(1306px, calc(100% - 30px));
   margin: 0 auto 0 auto;
   padding: 0 15px 0 15px;
-}
-
-/*шапка*/
-
-header {
-  margin: 9px 0 0 0;
-  display: flex;
-}
-
-.logo {
-  margin: 0 auto 0 0;
-}
-
-.account-icon {
-  margin: auto 0 18px 0;
-}
-
-/*навигация*/
-
-nav a {
-  display: inline-block;
-  margin: 0 31px 0 0;
-  padding: 19px 0 19px 0;
-  font-family: 'Inter', serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 22px;
-}
-
-nav a:last-child {
-  margin-right: 0;
-}
-
-nav a:hover {
-  color: #43AA72;
-}
-
-nav a:active {
-  color: #2A8955;
 }
