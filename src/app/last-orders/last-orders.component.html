@@ -2,7 +2,7 @@
 <tui-carousel [itemsCount]="itemsCount" [(index)]="index" [draggable]="true">
   <ng-container *ngFor="let item of items">
     <div *tuiItem class="item">
-      <img src="{{item.imgSrc}}" alt="pizza" class="last-orders-img">
+      <img src="{{item.imgSrc}}" alt="pizza" class="last-orders-img" width="76px" height="76px">
       <div class="text-container">
         <h2 class="tui-island__title">{{ item.title }}</h2>
         <div class="tui-island__content">{{ item.content }}</div>

@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./filters.component.css']
 })
 export class FiltersComponent {
-
+  readonly filters = [
+    'Без лука',
+    'С ветчиной',
+    'С ананасами',
+    'С курицей',
+    'С томатами',
+  ]
 }
