@@ -6,7 +6,7 @@
   font-family: 'Inter', serif;
   font-style: normal;
   margin: 0 0 68px 0;
-  width: 932px;
+  width: min(932px, 71.37%);
 }
 
 .good-cards {
