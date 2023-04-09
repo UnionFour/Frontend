@@ -1,0 +1,16 @@
+<div class="goods-container">
+  <h1>{{sectionName}}</h1>
+  <div class="good-cards">
+    <div *ngFor="let good of goods">
+      <div class="good-card">
+        <img src="{{good.imgSrc}}" alt="good picture" width="284" height="292">
+        <h2>{{good.name}}</h2>
+        <p>{{good.description}}</p>
+        <div class="good-footer">
+          <button>Выбрать</button>
+          <p class="price">{{good.price}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
