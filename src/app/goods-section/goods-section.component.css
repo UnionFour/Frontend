@@ -6,17 +6,18 @@
   font-family: 'Inter', serif;
   font-style: normal;
   margin: 0 0 68px 0;
+  width: 932px;
 }
 
 .good-cards {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -28px;
+  margin: 0 -20px;
 }
 
 .good-card {
   width: 284px;
-  margin: 36px 28px 0 28px;
+  margin: 36px 20px 0 20px;
 }
 
 .good-footer button, img {
