@@ -9,13 +9,17 @@ import { HeaderComponent } from './header/header.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { PromotionsComponent } from './promotions/promotions.component';
 import {TuiCarouselModule, TuiIslandModule, TuiPaginationModule} from "@taiga-ui/kit";
+import { LastOrdersComponent } from './last-orders/last-orders.component';
+import { FiltersComponent } from './filters/filters.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     NavigationComponent,
-    PromotionsComponent
+    PromotionsComponent,
+    LastOrdersComponent,
+    FiltersComponent
   ],
   imports: [
     BrowserModule,
