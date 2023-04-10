@@ -14,3 +14,7 @@ a {
 img {
   display: block;
 }
+
+:active, :hover, :focus {
+  outline: 0;
+}

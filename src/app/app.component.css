@@ -3,3 +3,9 @@
   margin: 0 auto 0 auto;
   padding: 0 15px 0 15px;
 }
+
+.promo-cart-container {
+  position: sticky;
+  z-index: 1000;
+  top: 30px;
+}
