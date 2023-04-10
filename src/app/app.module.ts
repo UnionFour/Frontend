@@ -13,6 +13,8 @@ import { LastOrdersComponent } from './last-orders/last-orders.component';
 import { FiltersComponent } from './filters/filters.component';
 import { GoodsSectionComponent } from './goods-section/goods-section.component';
 import { FooterComponent } from './footer/footer.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { PromocodeFieldComponent } from './promocode-field/promocode-field.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { FooterComponent } from './footer/footer.component';
     LastOrdersComponent,
     FiltersComponent,
     GoodsSectionComponent,
-    FooterComponent
+    FooterComponent,
+    ShoppingCartComponent,
+    PromocodeFieldComponent
   ],
   imports: [
     BrowserModule,

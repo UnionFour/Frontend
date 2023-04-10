@@ -1,0 +1,34 @@
+.cart {
+  width: 236px;
+  height: 134px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 22px -6px rgba(6, 5, 50, 0.25);
+  border-radius: 16px;
+  padding: 27px 34px 40px 34px;
+}
+
+.header {
+  display: flex;
+}
+
+.header img {
+  margin: 0 4px 0 0;
+}
+
+p {
+  font-family: 'Inter', serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 24px;
+  color: #8F8F8F;
+  margin: 33px 0 0 0;
+  text-align: center;
+}
+
+.cart-name {
+  font-size: 22px;
+  line-height: 32px;
+  color: #5C434D;
+  margin: 0;
+}
