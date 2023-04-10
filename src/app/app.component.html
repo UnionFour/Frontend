@@ -5,12 +5,16 @@
     <app-promotions></app-promotions>
     <app-last-orders></app-last-orders>
     <app-filters></app-filters>
-    <div class="promo-cart-container">
-      <app-shopping-cart></app-shopping-cart>
-      <app-promocode-field></app-promocode-field>
+    <div class="goods-cart-promo-container">
+      <div class="promo-cart-container">
+        <app-shopping-cart></app-shopping-cart>
+        <app-promocode-field></app-promocode-field>
+      </div>
+      <div class="goods-main-container">
+        <app-goods-section></app-goods-section>
+        <app-goods-section></app-goods-section>
+      </div>
     </div>
-    <app-goods-section></app-goods-section>
-    <app-goods-section></app-goods-section>
   </div>
   <app-footer></app-footer>
 </tui-root>
