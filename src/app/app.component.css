@@ -7,8 +7,8 @@
 .promo-cart-container {
   position: sticky;
   z-index: 1000;
-  top: 275px;
-  margin: 0 0 0 70px;
+  top: 150px;
+  margin: 72px 0 0 70px;
 }
 
 app-navigation {
@@ -20,4 +20,8 @@ app-navigation {
 app-shopping-cart, app-promocode-field, .promo-cart-container {
   display: inline-block;
   width: 304px;
+}
+
+.promo-cart-container {
+  vertical-align: top;
 }
