@@ -9,4 +9,15 @@ header {
 
 .account-icon {
   margin: auto 0 18px 0;
+  width: 28px;
+  height: 28px;
+  background: url(src/assets/img/account.svg) no-repeat;
+}
+
+.account-icon:hover {
+  background: url(src/assets/img/account_hover.svg) no-repeat;
+}
+
+.account-icon:active {
+  background: url(src/assets/img/account_active.svg) no-repeat;
 }
