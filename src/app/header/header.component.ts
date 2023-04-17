@@ -7,13 +7,4 @@ import {Router} from "@angular/router";
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  constructor(private router: Router) {}
-  availablePages: string[] = ['', '/account'];
-
-  setListTo(address: string = '') {
-    if (address in this.availablePages) {
-      this.router.navigateByUrl(address).then(r => {return;});
-      return;
-    }
-  }
 }
