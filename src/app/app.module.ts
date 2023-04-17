@@ -15,6 +15,15 @@ import { GoodsSectionComponent } from './goods-section/goods-section.component';
 import { FooterComponent } from './footer/footer.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { PromocodeFieldComponent } from './promocode-field/promocode-field.component';
+import { HomeComponent } from './home/home.component';
+import { CabinetComponent } from './cabinet/cabinet.component';
+import {RouterModule, Routes} from "@angular/router";
+
+const appRoutes: Routes =[
+  { path: '', component: HomeComponent},
+  { path: 'cabinet', component: CabinetComponent},
+  { path: '**', component: HomeComponent }
+];
 
 @NgModule({
   declarations: [
@@ -27,7 +36,9 @@ import { PromocodeFieldComponent } from './promocode-field/promocode-field.compo
     GoodsSectionComponent,
     FooterComponent,
     ShoppingCartComponent,
-    PromocodeFieldComponent
+    PromocodeFieldComponent,
+    HomeComponent,
+    CabinetComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +48,8 @@ import { PromocodeFieldComponent } from './promocode-field/promocode-field.compo
     TuiAlertModule,
     TuiCarouselModule,
     TuiPaginationModule,
-    TuiIslandModule
+    TuiIslandModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [{provide: TUI_SANITIZER, useClass: NgDompurifySanitizer}],
   bootstrap: [AppComponent]

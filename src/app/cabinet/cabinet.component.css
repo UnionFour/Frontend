@@ -1,0 +1,16 @@
+label {
+  display: block;
+  margin: 31px 0 0 0;
+}
+
+form label:first-child {
+  margin-top: 0;
+}
+
+h1 {
+  margin: 50px 0 50px 0;
+}
+
+button {
+  margin: 61px 0 0 0;
+}
