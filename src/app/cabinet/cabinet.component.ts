@@ -11,7 +11,8 @@ export class CabinetComponent {
     "userName": new FormControl(
       "",
       [
-        Validators.pattern('\'/^(?=.{1,40}$)[а-яёА-ЯЁ]+(?:[-\' ][а-яёА-ЯЁ]+)*$/\'')
+        Validators.pattern('^[А-Яа-яЁё\\s]+$'),
+        Validators.required,
       ]),
   });
 
@@ -19,12 +20,18 @@ export class CabinetComponent {
     "userEmail": new FormControl(
       "",
       [
-        Validators.email
+        Validators.email,
+        Validators.required,
       ]
     ),
   });
 
   birthdayForm : FormGroup = new FormGroup({
-    "userBirthday": new FormControl()
+    "userBirthday": new FormControl(
+      "",
+      [
+        Validators.required,
+      ]
+    )
   });
 }
