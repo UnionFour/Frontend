@@ -6,7 +6,9 @@
   font-family: 'Inter', serif;
   font-style: normal;
   margin: 0 0 68px 0;
-  width: min(932px, 71.37%);
+  /*width: min(932px, 71.362942%);*/
+  width: calc(100% - 374px);
+  /*width: calc(94.65% - 304px);*/
 
   display: inline-block;
 }
