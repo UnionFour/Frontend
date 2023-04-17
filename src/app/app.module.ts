@@ -18,6 +18,7 @@ import { PromocodeFieldComponent } from './promocode-field/promocode-field.compo
 import { HomeComponent } from './home/home.component';
 import { CabinetComponent } from './cabinet/cabinet.component';
 import {RouterModule, Routes} from "@angular/router";
+import {ReactiveFormsModule} from "@angular/forms";
 
 const appRoutes: Routes =[
   { path: '', component: HomeComponent},
@@ -49,7 +50,8 @@ const appRoutes: Routes =[
     TuiCarouselModule,
     TuiPaginationModule,
     TuiIslandModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    ReactiveFormsModule
   ],
   providers: [{provide: TUI_SANITIZER, useClass: NgDompurifySanitizer}],
   bootstrap: [AppComponent]

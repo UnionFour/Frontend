@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from "@angular/forms";
 
 @Component({
   selector: 'app-cabinet',
@@ -6,5 +7,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./cabinet.component.css']
 })
 export class CabinetComponent {
+  nameForm : FormGroup = new FormGroup({
+    "userName": new FormControl(
+      "",
+      [
+        Validators.pattern('\'/^(?=.{1,40}$)[а-яёА-ЯЁ]+(?:[-\' ][а-яёА-ЯЁ]+)*$/\'')
+      ]),
+  });
 
+  emailForm : FormGroup = new FormGroup({
+    "userEmail": new FormControl(
+      "",
+      [
+        Validators.email
+      ]
+    ),
+  });
+
+  birthdayForm : FormGroup = new FormGroup({
+    "userBirthday": new FormControl()
+  });
 }

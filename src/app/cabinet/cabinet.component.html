@@ -3,25 +3,25 @@
   <label for="phone">Телефон</label>
   <input id="phone" type="tel" disabled>
   <div class="form-group">
-    <form>
+    <form [formGroup]="nameForm">
       <label for="name">Имя</label>
-      <input id="name" type="text">
+      <input id="name" type="text" name="name" formControlName="userName">
     </form>
-    <button>Сохранить</button>
+    <button [disabled]="nameForm.invalid">Сохранить</button>
   </div>
   <div class="form-group">
-    <form>
+    <form [formGroup]="emailForm">
       <label for="mail">Эл. почта</label>
-      <input id="mail" type="email">
+      <input id="mail" type="email" name="email" formControlName="userEmail">
     </form>
-    <button>Сохранить</button>
+    <button [disabled]="emailForm.invalid">Сохранить</button>
   </div>
   <div class="form-group">
-    <form>
+    <form [formGroup]="birthdayForm">
       <label for="birthday">День рождения</label>
-      <input id="birthday" type="date">
+      <input id="birthday" type="date" name="birthday" formControlName="userBirthday">
     </form>
-    <button>Сохранить</button>
+    <button [disabled]="birthdayForm.invalid">Сохранить</button>
   </div>
 </div>
 <button class="exit-button">Выйти</button>
