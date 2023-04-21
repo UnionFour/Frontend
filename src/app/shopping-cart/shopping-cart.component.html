@@ -4,7 +4,7 @@
     <p class="cart-name">Корзина</p>
   </div>
   <p class="help" *ngIf="products.length === 0">Ваша корзина пуста. Выберите товары из меню</p>
-  <div *ngIf="products.length != 0" class="products">
+  <div *ngIf="products.length != 0">
     <div class="products">
       <div *ngFor="let product of products" class="product">
         <img src="{{product.imgPath}}" alt="image image" width="76px" height="76px">
