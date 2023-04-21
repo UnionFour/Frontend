@@ -11,7 +11,6 @@ export class CabinetComponent {
     "userName": new FormControl(
       "",
       [
-        Validators.pattern('^[А-Яа-яЁё\\s]+$'),
         Validators.required,
       ]),
   });

@@ -3,5 +3,16 @@
     <img src="assets/img/shopping_cart_icon.svg" alt="cart icon" width="32px" height="32px">
     <p class="cart-name">Корзина</p>
   </div>
-  <p>Ваша корзина пуста. Выберите товары из меню</p>
+  <p class="help" *ngIf="products.length === 0">Ваша корзина пуста. Выберите товары из меню</p>
+  <div *ngIf="products.length != 0" class="products">
+    <div *ngFor="let product of products">
+      <p class="product-name"  title="{{product.name}}">{{product.name.slice(0, 15)}}...</p>
+    </div>
+    <div class="footer">
+      <div class="sum-container">
+        <p>Сумма заказа:</p>
+        <p class="sum">{{sum}}</p>
+      </div>
+    </div>
+  </div>
 </div>

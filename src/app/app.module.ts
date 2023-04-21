@@ -19,6 +19,7 @@ import { HomeComponent } from './home/home.component';
 import { CabinetComponent } from './cabinet/cabinet.component';
 import {RouterModule, Routes} from "@angular/router";
 import {ReactiveFormsModule} from "@angular/forms";
+import {GoodCardComponent} from "./good-card/good-card.component";
 
 const appRoutes: Routes =[
   { path: '', component: HomeComponent},
@@ -39,7 +40,8 @@ const appRoutes: Routes =[
     ShoppingCartComponent,
     PromocodeFieldComponent,
     HomeComponent,
-    CabinetComponent
+    CabinetComponent,
+    GoodCardComponent
   ],
   imports: [
     BrowserModule,
