@@ -1,4 +1,4 @@
-import { Input, Component, OnInit } from '@angular/core';
+import { Input, Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { DelayedProduct } from "../../assets/classes/delayed-product";
 
 @Component({
@@ -8,8 +8,10 @@ import { DelayedProduct } from "../../assets/classes/delayed-product";
 })
 export class ShopCartItemComponent implements OnInit{
   @Input() product!: DelayedProduct;
-  count: number = 0;
-  sum: number = 0;
+  @Output() onPlusOne = new EventEmitter<DelayedProduct>();
+  @Output() onMinusOne = new EventEmitter<DelayedProduct>();
+  public count: number = 0;
+  public sum: number = 0;
 
   ngOnInit() {
     this.count = this.product.count;

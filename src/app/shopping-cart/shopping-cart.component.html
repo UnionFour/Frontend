@@ -7,7 +7,7 @@
   <div *ngIf="delayedProducts.length != 0">
     <div class="products">
       <div *ngFor="let product of delayedProducts">
-        <shop-cart-item [product]="product"></shop-cart-item>
+        <shop-cart-item [product]="product" (onPlusOne)="onPlusOne($event)"></shop-cart-item>
       </div>
     </div>
     <div class="footer">

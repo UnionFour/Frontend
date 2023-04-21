@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SelectingProductsService } from "../services/selecting-products";
 import { DelayedProduct } from "../../assets/classes/delayed-product";
+import {Subject} from "rxjs";
 
 @Component({
   selector: 'app-shopping-cart',
@@ -27,5 +28,11 @@ export class ShoppingCartComponent implements OnInit {
     let prices: Array<number> = this.delayedProducts.map((product) => product.price)
     return prices.reduce(function (currentSum, currentNumber) {
       return currentSum + currentNumber}, 0)
+  }
+
+  onPlusOne(changedProduct: DelayedProduct) {
+    console.log(changedProduct);
+    this.delayedProducts.push(changedProduct);
+    this.sum += changedProduct.price;
   }
 }
