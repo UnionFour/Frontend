@@ -3,21 +3,11 @@
     <img src="assets/img/shopping_cart_icon.svg" alt="cart icon" width="32px" height="32px">
     <p class="cart-name">Корзина</p>
   </div>
-  <p class="help" *ngIf="products.length === 0">Ваша корзина пуста. Выберите товары из меню</p>
-  <div *ngIf="products.length != 0">
+  <p class="help" *ngIf="delayedProducts.length === 0">Ваша корзина пуста. Выберите товары из меню</p>
+  <div *ngIf="delayedProducts.length != 0">
     <div class="products">
-      <div *ngFor="let product of products" class="product">
-        <img src="{{product.imgPath}}" alt="image image" width="76px" height="76px">
-        <div class="container-description">
-          <p class="product-name"  title="{{product.name}}">{{product.name.slice(0, 17)}}..</p>
-          <p class="description" title="{{product.description}}">{{product.description.slice(0, 16)}}..</p>
-          <div class="count-control">
-            <button class="minus">-</button>
-            <p class="count">1</p>
-            <button class="plus">+</button>
-            <p class="this-products-price">{{product.price}}</p>
-          </div>
-        </div>
+      <div *ngFor="let product of delayedProducts">
+        <shop-cart-item [product]="product"></shop-cart-item>
       </div>
     </div>
     <div class="footer">

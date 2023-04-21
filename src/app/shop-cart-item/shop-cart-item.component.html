@@ -1,0 +1,13 @@
+<div class="product">
+  <img src="{{product.imgPath}}" alt="image image" width="76px" height="76px">
+  <div class="container-description">
+    <p class="product-name"  title="{{product.name}}">{{product.name.slice(0, 17)}}..</p>
+    <p class="description" title="{{product.description}}">{{product.description.slice(0, 16)}}..</p>
+    <div class="count-control">
+      <button class="minus" (click)="MinusOne()">-</button>
+      <p class="count">{{count}}</p>
+      <button class="plus" (click)="PlusOne()">+</button>
+      <p class="this-products-price">{{sum}}₽</p>
+    </div>
+  </div>
+</div>

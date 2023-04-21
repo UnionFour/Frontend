@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { SelectingProductsService } from "../services/selecting-products";
-import { Product } from "../../assets/classes/product";
 import { DelayedProduct } from "../../assets/classes/delayed-product";
 
 @Component({
@@ -11,7 +10,7 @@ import { DelayedProduct } from "../../assets/classes/delayed-product";
 })
 export class ShoppingCartComponent implements OnInit {
 
-  products: Array<Product> = Array<Product>();
+  delayedProducts: Array<DelayedProduct> = Array<DelayedProduct>();
   sum: number = 0;
 
   constructor(private selectingProductsService: SelectingProductsService) {}
@@ -19,13 +18,13 @@ export class ShoppingCartComponent implements OnInit {
   ngOnInit() {
     this.selectingProductsService.changedProduct$.subscribe(
       (changedProduct) => {
-        this.products.push(changedProduct);
+        this.delayedProducts.push(new DelayedProduct(changedProduct));
         this.sum = this.getOrderSum();
       });
   }
 
   getOrderSum() {
-    let prices: Array<number> = this.products.map((product) => product.price)
+    let prices: Array<number> = this.delayedProducts.map((product) => product.price)
     return prices.reduce(function (currentSum, currentNumber) {
       return currentSum + currentNumber}, 0)
   }
