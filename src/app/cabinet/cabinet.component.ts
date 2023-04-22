@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { TuiDay } from '@taiga-ui/cdk';
 
 @Component({
   selector: 'app-cabinet',
   templateUrl: './cabinet.component.html',
-  styleUrls: ['./cabinet.component.css']
+  styleUrls: ['./cabinet.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CabinetComponent {
   nameForm : FormGroup = new FormGroup({
@@ -27,7 +29,7 @@ export class CabinetComponent {
 
   birthdayForm : FormGroup = new FormGroup({
     "userBirthday": new FormControl(
-      "",
+      new TuiDay(2000, 1, 1),
       [
         Validators.required,
       ]

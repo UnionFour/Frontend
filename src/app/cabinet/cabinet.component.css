@@ -45,14 +45,6 @@ h1 {
   text-shadow: 4px 4px 12px rgba(67, 170, 114, 0.35);
 }
 
-.form-group button:disabled {
-  color: #8F8F8F;
-}
-
-.form-group button:disabled:active {
-  color: #8F8F8F;
-}
-
 .exit-button {
   width: 120px;
   height: 40px;
@@ -66,7 +58,7 @@ h1 {
   border-radius: 9999px;
   border: none;
   cursor: pointer;
-  margin: 162px 0 0 0;
+  margin: 125px 0 0 0;
 }
 
 .exit-button:hover {
@@ -79,7 +71,8 @@ h1 {
 }
 
 input {
-  border: 1px solid #5C434D;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  border: 2px solid #FFFFFF;
   border-radius: 15px;
   width: 300px;
   height: 30px;
@@ -94,10 +87,30 @@ input {
 }
 
 input:hover {
-  border: 1px solid #B19EA5;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.30);
+}
+
+input:focus {
+  border: 2px solid #526ED3;
 }
 
 #phone {
   background-color: #C5BABE;
-  border: 1px solid #C5BABE;
+  border: 2px solid #C5BABE;
+}
+
+.form-group button:disabled {
+  color: #8F8F8F;
+}
+
+.form-group button:disabled:active {
+  color: #8F8F8F;
+}
+
+tui-input-date {
+  font-size: 30px;
+}
+
+.birthday-form-group button {
+  margin-top: 55px;
 }
