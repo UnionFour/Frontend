@@ -1,10 +1,18 @@
 .good-footer {
+  width: 100%;
   display: flex;
+
+  position: absolute;
+  bottom: 0;
 }
 
 .good-card {
   width: 284px;
   margin: 36px 20px 0 20px;
+  height: 500px;
+  padding: 0;
+
+  position:relative;
 }
 
 .good-footer button, img {
@@ -25,9 +33,9 @@ p {
   margin: 0;
 }
 
-.good-footer {
-  margin: 32px 0 0 0;
-}
+/*.good-footer {*/
+/*  margin: 32px 0 0 0;*/
+/*}*/
 
 .price {
   font-weight: 600;

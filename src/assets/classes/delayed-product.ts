@@ -5,7 +5,7 @@ export class DelayedProduct extends Product{
   totalAmount: number;
 
   constructor(product: Product, count: number = 1) {
-    super(product.name, product.description, product.category, product.price);
+    super(product.name, product.description, product.category, product.price, product.imgPath);
     this.count = count;
     this.totalAmount = product.price;
   }
