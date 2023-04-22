@@ -12,9 +12,6 @@ import { Order } from "../../assets/classes/order";
 export class ShoppingCartComponent implements OnInit {
   order!: Order;
   renderingProducts: Array<DelayedProduct> = new Array<DelayedProduct>();
-  delayedProducts: Array<DelayedProduct> = new Array<DelayedProduct>();
-  delayedProductsMap: Map<string, DelayedProduct> = new Map<string, DelayedProduct>();
-  sum: number = 0;
 
   constructor(private selectingProductsService: SelectingProductsService) {}
 
@@ -31,14 +28,16 @@ export class ShoppingCartComponent implements OnInit {
   }
 
   updateRendering() {
-    this.renderingProducts = new Array<DelayedProduct>();
-    for (let product of this.order.productNames.values()) {
-      this.renderingProducts.push(product);
-    }
+    this.renderingProducts = Array.from(this.order.productNames.values());
     this.order.orderSum = this.order.getOrderSum();
   }
 
   onChangeProductCount() {
+    this.order.orderSum = this.order.getOrderSum();
+  }
+
+  onRemoveProduct(removedProduct: DelayedProduct) {
+    this.order.removeProduct(removedProduct.name);
     this.updateRendering();
   }
 }

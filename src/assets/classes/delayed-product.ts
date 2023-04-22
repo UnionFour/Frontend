@@ -10,12 +10,12 @@ export class DelayedProduct extends Product{
     this.totalAmount = product.price;
   }
 
-  PlusCount(count: number = 1) {
+  plusCount(count: number = 1) {
     this.count += count;
     this.totalAmount += this.price * count;
   }
 
-  MinusCount(count: number = 1) {
+  minusCount(count: number = 1) {
     if (this.count > count) {
       this.count -= count;
       this.totalAmount -= this.price * count;

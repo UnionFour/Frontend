@@ -13,7 +13,7 @@ export class Order{
   append(product: DelayedProduct) {
     if (this.productNames.has(product.name)) {
       let changedProduct = this.productNames.get(product.name);
-      changedProduct!.PlusCount(product.count);
+      changedProduct!.plusCount(product.count);
     } else {
       this.productNames.set(product.name, product);
     }
@@ -26,5 +26,11 @@ export class Order{
       sum += product.totalAmount;
     }
     return sum;
+  }
+
+  removeProduct(productName: string) {
+    if (this.productNames.has(productName)) {
+      this.productNames.delete(productName);
+    }
   }
 }

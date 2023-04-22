@@ -8,7 +8,8 @@
     <div class="products">
       <div *ngFor="let product of renderingProducts">
         <shop-cart-item [product]="product" (onPlusOne)="onChangeProductCount()"
-                        (onMinusOne)="onChangeProductCount()"></shop-cart-item>
+                        (onMinusOne)="onChangeProductCount()" (onRemove)="onRemoveProduct($event)">
+        </shop-cart-item>
       </div>
     </div>
     <div class="footer">
