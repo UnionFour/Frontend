@@ -1,4 +1,4 @@
-import { Input, Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Input, Component, Output, EventEmitter } from '@angular/core';
 import { DelayedProduct } from "../../assets/classes/delayed-product";
 
 @Component({
@@ -6,27 +6,19 @@ import { DelayedProduct } from "../../assets/classes/delayed-product";
   templateUrl: './shop-cart-item.component.html',
   styleUrls: ['./shop-cart-item.component.css']
 })
-export class ShopCartItemComponent implements OnInit{
+export class ShopCartItemComponent {
   @Input() product!: DelayedProduct;
+
   @Output() onPlusOne = new EventEmitter<DelayedProduct>();
   @Output() onMinusOne = new EventEmitter<DelayedProduct>();
-  public count: number = 0;
-  public sum: number = 0;
-
-  ngOnInit() {
-    this.count = this.product.count;
-    this.sum = this.product.totalAmount;
-  }
 
   PlusOne() {
-    this.product.PlusCount();
-    this.count = this.product.count;
-    this.sum = this.product.totalAmount;
+    this.product.PlusCount(1);
+    this.onPlusOne.emit(this.product);
   }
 
   MinusOne() {
-    this.product.MinusCount();
-    this.count = this.product.count;
-    this.sum = this.product.totalAmount;
+    this.product.MinusCount(1);
+    this.onMinusOne.emit(this.product);
   }
 }

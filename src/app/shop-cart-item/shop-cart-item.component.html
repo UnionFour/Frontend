@@ -5,9 +5,9 @@
     <p class="description" title="{{product.description}}">{{product.description.slice(0, 16)}}..</p>
     <div class="count-control">
       <button class="minus" (click)="MinusOne()">-</button>
-      <p class="count">{{count}}</p>
+      <p class="count">{{product.count}}</p>
       <button class="plus" (click)="PlusOne()">+</button>
-      <p class="this-products-price">{{sum}}₽</p>
+      <p class="this-products-price">{{product.totalAmount}}₽</p>
     </div>
   </div>
 </div>

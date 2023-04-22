@@ -16,7 +16,7 @@ export class DelayedProduct extends Product{
   }
 
   MinusCount(count: number = 1) {
-    if (this.count >= count) {
+    if (this.count > count) {
       this.count -= count;
       this.totalAmount -= this.price * count;
     }

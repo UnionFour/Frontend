@@ -3,17 +3,18 @@
     <img src="assets/img/shopping_cart_icon.svg" alt="cart icon" width="32px" height="32px">
     <p class="cart-name">Корзина</p>
   </div>
-  <p class="help" *ngIf="delayedProducts.length === 0">Ваша корзина пуста. Выберите товары из меню</p>
-  <div *ngIf="delayedProducts.length != 0">
+  <p class="help" *ngIf="renderingProducts.length === 0">Ваша корзина пуста. Выберите товары из меню</p>
+  <div *ngIf="renderingProducts.length != 0">
     <div class="products">
-      <div *ngFor="let product of delayedProducts">
-        <shop-cart-item [product]="product" (onPlusOne)="onPlusOne($event)"></shop-cart-item>
+      <div *ngFor="let product of renderingProducts">
+        <shop-cart-item [product]="product" (onPlusOne)="onChangeProductCount()"
+                        (onMinusOne)="onChangeProductCount()"></shop-cart-item>
       </div>
     </div>
     <div class="footer">
       <div class="sum-container">
         <p class="sum-text">Сумма заказа:</p>
-        <p class="sum">{{sum}}₽</p>
+        <p class="sum">{{order.orderSum}}₽</p>
       </div>
       <button class="order-button">Заказать</button>
     </div>

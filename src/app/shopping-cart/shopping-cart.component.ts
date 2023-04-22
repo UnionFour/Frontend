@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit } from '@angular/core';
 import { SelectingProductsService } from "../services/selecting-products";
 import { DelayedProduct } from "../../assets/classes/delayed-product";
-import {Subject} from "rxjs";
+import { Order } from "../../assets/classes/order";
 
 @Component({
   selector: 'app-shopping-cart',
@@ -10,8 +10,10 @@ import {Subject} from "rxjs";
 
 })
 export class ShoppingCartComponent implements OnInit {
-
-  delayedProducts: Array<DelayedProduct> = Array<DelayedProduct>();
+  order!: Order;
+  renderingProducts: Array<DelayedProduct> = new Array<DelayedProduct>();
+  delayedProducts: Array<DelayedProduct> = new Array<DelayedProduct>();
+  delayedProductsMap: Map<string, DelayedProduct> = new Map<string, DelayedProduct>();
   sum: number = 0;
 
   constructor(private selectingProductsService: SelectingProductsService) {}
@@ -19,20 +21,24 @@ export class ShoppingCartComponent implements OnInit {
   ngOnInit() {
     this.selectingProductsService.changedProduct$.subscribe(
       (changedProduct) => {
-        this.delayedProducts.push(new DelayedProduct(changedProduct));
-        this.sum = this.getOrderSum();
+        if (!this.order) {
+          this.order = new Order(new DelayedProduct(changedProduct));
+        } else {
+          this.order.append(new DelayedProduct(changedProduct));
+        }
+        this.updateRendering();
       });
   }
 
-  getOrderSum() {
-    let prices: Array<number> = this.delayedProducts.map((product) => product.price)
-    return prices.reduce(function (currentSum, currentNumber) {
-      return currentSum + currentNumber}, 0)
+  updateRendering() {
+    this.renderingProducts = new Array<DelayedProduct>();
+    for (let product of this.order.productNames.values()) {
+      this.renderingProducts.push(product);
+    }
+    this.order.orderSum = this.order.getOrderSum();
   }
 
-  onPlusOne(changedProduct: DelayedProduct) {
-    console.log(changedProduct);
-    this.delayedProducts.push(changedProduct);
-    this.sum += changedProduct.price;
+  onChangeProductCount() {
+    this.updateRendering();
   }
 }
