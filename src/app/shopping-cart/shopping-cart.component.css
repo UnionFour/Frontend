@@ -80,9 +80,9 @@ p {
 
 .order-button {
   padding: 8px 30px 8px 30px;
-  background: #FFF1D6;
+  background: #43AA72;
   border-radius: 9999px;
-  width: 139px;
+  width: 153px;
   height: 40px;
   border: none;
   cursor: pointer;
@@ -92,14 +92,15 @@ p {
   font-weight: 700;
   font-size: 15px;
   line-height: 24px;
-  color: #9B7327;
+  color: #FFFFFF;
 }
 
 .order-button:hover {
-  background: #F4DCAE;
+  background: #369B64;
+  color: #EBEBEB;
 }
 
 .order-button:active {
-  background: #FFF8EA;
-  color: #CBAA6B;
+  background: #43AA72;
+  color: #D1FFE6;
 }
