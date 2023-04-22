@@ -4,7 +4,6 @@ export class Product {
   category: string;
   imgPath: string;
   price: number;
-  shortDescription: string;
 
   constructor(name: string, description: string, category: string, price: number,
               imgPath: string = "assets/img/pizza_example.png") {
@@ -13,9 +12,19 @@ export class Product {
     this.category = category;
     this.imgPath = imgPath;
     this.price = price;
-    this.shortDescription = description;
-    if (description.length > 130) {
-      this.shortDescription = description.slice(0, 126) + '...';
+  }
+
+  getShortDescription(maxLength: number, endSymbols: string = '...') {
+    if (this.description.length > maxLength) {
+      return this.description.slice(0, maxLength - (endSymbols.length + 1)) + endSymbols;
     }
+    return this.description;
+  }
+
+  getShortName(maxLength: number, endSymbols: string = '...') {
+    if (this.name.length > maxLength) {
+      return this.name.slice(0, maxLength - (endSymbols.length + 1)) + endSymbols;
+    }
+    return this.name;
   }
 }
