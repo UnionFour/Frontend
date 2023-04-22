@@ -5,6 +5,27 @@ p {
 .product {
   margin: 0 0 25px 0;
   display: flex;
+
+  position:relative;
+}
+
+.cross {
+  background: url("src/assets/img/cross.svg") no-repeat;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  border: none;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+.cross:hover {
+  background: url("src/assets/img/cross_hover.svg") no-repeat;
+}
+
+.cross:active {
+  background: url("src/assets/img/cross_active.svg") no-repeat;
 }
 
 .product-name {
