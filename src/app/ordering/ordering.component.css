@@ -42,6 +42,11 @@
 
 .delivery-button, .pickup-button {
   background-color: #FFFFFF;
+  font-family: 'Inter', serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
 }
 
 .delivery-button {
@@ -71,6 +76,7 @@
   border-radius: 25px;
   background-color: #FFFFFF;
   padding: 34px 30px 0 30px;
+  position: relative;
   /*max-height: 100vh;*/
   /*overflow-y: scroll;*/
 }
@@ -132,7 +138,7 @@ input {
   margin: 24px 0 0 0;
 }
 
-.promo-code-button {
+.promo-code-button, .exit-button {
   height: 40px;
   width: 110px;
   border-radius: 100px;
@@ -140,6 +146,9 @@ input {
   font-weight: 700;
   border: 2px solid #43AA72;
   color: #43AA72;
+}
+
+.promo-code-button {
   margin-left: 10px;
 }
 
@@ -154,12 +163,12 @@ input {
   color: #C5BABE;
 }
 
-.promo-code-button:not(:disabled):hover {
+.promo-code-button:not(:disabled):hover, .exit-button:hover {
   border: 2px solid #30915C;
   color: #30915C;
 }
 
-.promo-code-button:not(:disabled):active {
+.promo-code-button:not(:disabled):active, .exit-button:active {
   text-shadow: 4px 4px 20px rgba(67, 170, 114, 0.35);
 }
 
@@ -177,4 +186,41 @@ input {
   color: #aca3a7;
   font-size: 14px;
   font-weight: 500;
+}
+
+.details-footer {
+  width: calc(100% - 60px);
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  bottom: 20px;
+}
+
+.details-footer button {
+  display: block;
+}
+
+.send-order-button {
+  border: none;
+  height: 42px;
+  border-radius: 100px;
+  background-color: #43AA72;
+  cursor: pointer;
+  padding-left: 40px;
+  padding-right: 40px;
+
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 24px;
+  color: #FFFFFF;
+}
+
+.send-order-button:hover {
+  color: #EBEBEB;
+  background-color: #369B64;
+}
+
+.send-order-button:active {
+  color: #D1FFE6;
+  background-color: #43AA72;
 }

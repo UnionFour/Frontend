@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import { Component, Input } from '@angular/core';
+import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { Order } from "../../assets/classes/order";
 
 @Component({
   selector: 'app-ordering',
@@ -8,7 +9,10 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 })
 export class OrderingComponent {
 
+  @Input() order!: Order;
+
   isDeliverySelected: boolean = true;
+
   phoneFormGroup : FormGroup = new FormGroup({
     "phone": new FormControl()
   });

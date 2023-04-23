@@ -1,4 +1,4 @@
-import {Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SelectingProductsService } from "../services/selecting-products.service";
 import { DelayedProduct } from "../../assets/classes/delayed-product";
 import { Order } from "../../assets/classes/order";
