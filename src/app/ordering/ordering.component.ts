@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Order } from "../../assets/classes/order";
 
@@ -10,6 +10,7 @@ import { Order } from "../../assets/classes/order";
 export class OrderingComponent {
 
   @Input() order!: Order;
+  @Output() isOpenModal: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   isDeliverySelected: boolean = true;
 
@@ -26,5 +27,9 @@ export class OrderingComponent {
 
   changeDeliveryMethod() {
     this.isDeliverySelected = !this.isDeliverySelected;
+  }
+
+  closeModal() {
+    this.isOpenModal.emit(false);
   }
 }

@@ -31,7 +31,7 @@
       <div *ngIf="!isDeliverySelected" class="pickup-details">
       </div>
       <div class="details-footer">
-        <button class="exit-button">Назад</button>
+        <button class="exit-button" (click)="closeModal()">Назад</button>
         <button class="send-order-button">Заказать за {{order.orderSum}}₽</button>
       </div>
     </div>

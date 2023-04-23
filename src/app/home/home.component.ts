@@ -17,8 +17,12 @@ export class HomeComponent  implements OnInit {
     this.orderingService.order$.subscribe(
       (newOrder) => {
         this.order = newOrder;
-        this.isOpenModal = true;
+        this.changeOpennessModal(true);
       }
     );
+  }
+
+  changeOpennessModal(isOpen: boolean) {
+    this.isOpenModal = isOpen;
   }
 }
