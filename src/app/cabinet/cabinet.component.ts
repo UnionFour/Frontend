@@ -5,7 +5,7 @@ import { TuiDay } from '@taiga-ui/cdk';
 @Component({
   selector: 'app-cabinet',
   templateUrl: './cabinet.component.html',
-  styleUrls: ['./cabinet.component.css'],
+  styleUrls: ['./cabinet.component.css', '../../assets/styles/shady-input.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CabinetComponent {

@@ -3,6 +3,7 @@
 <app-filters></app-filters>
 <div class="goods-cart-promo-container">
   <app-goods-section></app-goods-section>
+  <app-ordering *ngIf="order"></app-ordering>
   <div class="promo-cart-container">
     <app-shopping-cart></app-shopping-cart>
     <app-promocode-field></app-promocode-field>

@@ -7,3 +7,9 @@
 tui-root, .media{
   min-height: 100vh;
 }
+
+app-navigation {
+  position: sticky;
+  z-index: 1000;
+  top: 0;
+}

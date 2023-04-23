@@ -1,24 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import {OrderingService} from "./services/ordering.service";
-import { Order } from "../assets/classes/order";
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent{
 
-  order: Order | undefined;
-  isOpenModal: boolean = false;
-  constructor(private orderingService: OrderingService) { }
-
-  ngOnInit() {
-    this.orderingService.order$.subscribe(
-      (newOrder) => {
-        this.order = newOrder;
-        this.isOpenModal = true;
-      }
-    );
-  }
 }

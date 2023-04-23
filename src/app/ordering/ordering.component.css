@@ -1,8 +1,6 @@
 .modal-container {
   width: min(620px, calc(100% - 30px));
-  height: 583px;
   position: fixed;
-  top: 211px;
   z-index: 9999;
 }
 
@@ -20,16 +18,13 @@
 
 .shadow {
   box-shadow: 0 0 1000px 0 rgba(6, 5, 50, 0.3);
-  top: 256px;
   z-index: 9998;
   height: 538px;
   position: fixed;
   max-width: 620px;
   width: min(620px, calc(100% - 30px));
-}
-
-.delivery-method, .details {
-  background-color: #FFFFFF;
+  border-radius: 25px;
+  margin: 45px 0 0 0;
 }
 
 .delivery-method {
@@ -41,12 +36,145 @@
 .delivery-method button {
   border: none;
   cursor: pointer;
-  background-color: #FFFFFF;
   width: 126px;
-  height: 26px;
+  height: 36px;
+}
+
+.delivery-button, .pickup-button {
+  background-color: #FFFFFF;
+}
+
+.delivery-button {
+  border-radius: 14px 0 0 14px;
+}
+
+.pickup-button {
+  border-radius: 0 14px 14px 0;
+}
+
+.selected-method-button {
+  background-color: #C5BABE;
+  color: #77616A;
+}
+
+.selected-method-button button:not(.pickup-button):hover {
+
+}
+
+.selected-method-button button:not(.pickup-button):active {
+
 }
 
 .details {
   margin: 9px 0 0 0;
-  height: 538px;
+  height: 504px;
+  border-radius: 25px;
+  background-color: #FFFFFF;
+  padding: 34px 30px 0 30px;
+  /*max-height: 100vh;*/
+  /*overflow-y: scroll;*/
+}
+
+/*.details::-webkit-scrollbar {*/
+/*  width: 0;*/
+/*}*/
+
+.order-header, .promo-code-container {
+  display: flex;
+}
+
+label {
+  display: block;
+  font-family: 'Inter', serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+input {
+  width: 156px;
+  height: 17px;
+  padding: 9px 24px;
+  margin: 0;
+
+  font-family: 'Inter', serif;
+  font-style: normal;
+}
+
+.phone-group {
+  margin: 0 24px 0 0;
+}
+
+
+.phone-input::-webkit-input-placeholder { /* WebKit browsers */
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+}
+.phone-input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+}
+.phone-input::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+}
+.phone-input:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.promo-code-container {
+  margin: 24px 0 0 0;
+}
+
+.promo-code-button {
+  height: 40px;
+  width: 110px;
+  border-radius: 100px;
+  background-color: #FFFFFF;
+  font-weight: 700;
+  border: 2px solid #43AA72;
+  color: #43AA72;
+  margin-left: 10px;
+}
+
+.promo-code-input::-webkit-input-placeholder { /* WebKit browsers */
+  color: #aca3a7;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.promo-code-button:disabled {
+  border: 2px solid #C5BABE;
+  color: #C5BABE;
+}
+
+.promo-code-button:not(:disabled):hover {
+  border: 2px solid #30915C;
+  color: #30915C;
+}
+
+.promo-code-button:not(:disabled):active {
+  text-shadow: 4px 4px 20px rgba(67, 170, 114, 0.35);
+}
+
+.promo-code-input:-moz-placeholder { /* WebKit browsers */
+  color: #aca3a7;
+  font-size: 14px;
+  font-weight: 500;
+}
+.promo-code-input::-moz-placeholder { /* WebKit browsers */
+  color: #aca3a7;
+  font-size: 14px;
+  font-weight: 500;
+}
+.promo-code-input:-ms-input-placeholder { /* WebKit browsers */
+  color: #aca3a7;
+  font-size: 14px;
+  font-weight: 500;
 }
