@@ -1,7 +1,8 @@
 import {Component, OnInit } from '@angular/core';
-import { SelectingProductsService } from "../services/selecting-products";
+import { SelectingProductsService } from "../services/selecting-products.service";
 import { DelayedProduct } from "../../assets/classes/delayed-product";
 import { Order } from "../../assets/classes/order";
+import { OrderingService } from "../services/ordering.service";
 
 @Component({
   selector: 'app-shopping-cart',
@@ -13,7 +14,8 @@ export class ShoppingCartComponent implements OnInit {
   order!: Order;
   renderingProducts: Array<DelayedProduct> = new Array<DelayedProduct>();
 
-  constructor(private selectingProductsService: SelectingProductsService) {}
+  constructor(private selectingProductsService: SelectingProductsService,
+              private orderingService: OrderingService) {}
 
   ngOnInit() {
     this.selectingProductsService.changedProduct$.subscribe(
@@ -39,5 +41,9 @@ export class ShoppingCartComponent implements OnInit {
   onRemoveProduct(removedProduct: DelayedProduct) {
     this.order.removeProduct(removedProduct.name);
     this.updateRendering();
+  }
+
+  sendOrder() {
+    this.orderingService.initializeOrder(this.order);
   }
 }

@@ -1,5 +1,5 @@
 import { Input, Component } from '@angular/core';
-import { SelectingProductsService } from "../services/selecting-products";
+import { SelectingProductsService } from "../services/selecting-products.service";
 import { Product } from "../../assets/classes/product";
 
 @Component({

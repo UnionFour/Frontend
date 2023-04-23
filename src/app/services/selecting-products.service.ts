@@ -9,7 +9,7 @@ import { Order } from 'src/assets/classes/order'
 })
 
 export class SelectingProductsService {
-  public changedProduct$ = new Subject<Product>();
+  public changedProduct$: Subject<Product> = new Subject<Product>();
   public selectedProducts = new Map<string, Product>();
   public order: Order | undefined;
 

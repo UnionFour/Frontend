@@ -27,6 +27,7 @@ import {RouterModule, Routes} from "@angular/router";
 import {ReactiveFormsModule} from "@angular/forms";
 import {GoodCardComponent} from "./good-card/good-card.component";
 import { ShopCartItemComponent } from './shop-cart-item/shop-cart-item.component';
+import { OrderingComponent } from './ordering/ordering.component';
 
 const appRoutes: Routes =[
   { path: '', component: HomeComponent},
@@ -49,7 +50,8 @@ const appRoutes: Routes =[
     HomeComponent,
     CabinetComponent,
     GoodCardComponent,
-    ShopCartItemComponent
+    ShopCartItemComponent,
+    OrderingComponent
   ],
   imports: [
     BrowserModule,

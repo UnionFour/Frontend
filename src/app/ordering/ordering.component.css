@@ -1,0 +1,52 @@
+.modal-container {
+  width: min(620px, calc(100% - 30px));
+  height: 583px;
+  position: fixed;
+  top: 211px;
+  z-index: 9999;
+}
+
+.container {
+  position:fixed;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+}
+
+.shadow {
+  box-shadow: 0 0 1000px 0 rgba(6, 5, 50, 0.3);
+  top: 256px;
+  z-index: 9998;
+  height: 538px;
+  position: fixed;
+  max-width: 620px;
+  width: min(620px, calc(100% - 30px));
+}
+
+.delivery-method, .details {
+  background-color: #FFFFFF;
+}
+
+.delivery-method {
+  height: 36px;
+  width: 252px;
+  display: flex;
+}
+
+.delivery-method button {
+  border: none;
+  cursor: pointer;
+  background-color: #FFFFFF;
+  width: 126px;
+  height: 26px;
+}
+
+.details {
+  margin: 9px 0 0 0;
+  height: 538px;
+}
