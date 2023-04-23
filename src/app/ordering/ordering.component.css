@@ -146,6 +146,7 @@ input {
   font-weight: 700;
   border: 2px solid #43AA72;
   color: #43AA72;
+  cursor: pointer;
 }
 
 .promo-code-button {
@@ -161,6 +162,7 @@ input {
 .promo-code-button:disabled {
   border: 2px solid #C5BABE;
   color: #C5BABE;
+  cursor: auto;
 }
 
 .promo-code-button:not(:disabled):hover, .exit-button:hover {
