@@ -5,20 +5,22 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { NavigationComponent } from './navigation/navigation.component';
-import { PromotionsComponent } from './promotions/promotions.component';
+import { HeaderComponent } from './components/header/header.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { PromotionsComponent } from './components/promotions/promotions.component';
 import {TuiCarouselModule, TuiIslandModule, TuiPaginationModule} from "@taiga-ui/kit";
-import { LastOrdersComponent } from './last-orders/last-orders.component';
-import { FiltersComponent } from './filters/filters.component';
-import { GoodsSectionComponent } from './goods-section/goods-section.component';
-import { FooterComponent } from './footer/footer.component';
-import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
-import { PromocodeFieldComponent } from './promocode-field/promocode-field.component';
-import { HomeComponent } from './home/home.component';
-import { CabinetComponent } from './cabinet/cabinet.component';
+import { LastOrdersComponent } from './components/last-orders/last-orders.component';
+import { FiltersComponent } from './components/filters/filters.component';
+import { GoodsSectionComponent } from './components/goods-section/goods-section.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { PromocodeFieldComponent } from './components/promocode-field/promocode-field.component';
+import { HomeComponent } from './components/home/home.component';
+import { CabinetComponent } from './components/cabinet/cabinet.component';
 import {RouterModule, Routes} from "@angular/router";
 import {ReactiveFormsModule} from "@angular/forms";
+import { GraphQLModule } from './graphql.module';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes =[
   { path: '', component: HomeComponent},
@@ -51,7 +53,9 @@ const appRoutes: Routes =[
     TuiPaginationModule,
     TuiIslandModule,
     RouterModule.forRoot(appRoutes),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    GraphQLModule,
+    HttpClientModule
   ],
   providers: [{provide: TUI_SANITIZER, useClass: NgDompurifySanitizer}],
   bootstrap: [AppComponent]
