@@ -1,5 +1,11 @@
 import { NgDompurifySanitizer } from "@tinkoff/ng-dompurify";
-import { TuiRootModule, TuiDialogModule, TuiAlertModule, TUI_SANITIZER } from "@taiga-ui/core";
+import {
+    TuiRootModule,
+    TuiDialogModule,
+    TuiAlertModule,
+    TUI_SANITIZER,
+    TuiTextfieldControllerModule
+} from "@taiga-ui/core";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -8,7 +14,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { PromotionsComponent } from './promotions/promotions.component';
-import {TuiCarouselModule, TuiIslandModule, TuiPaginationModule} from "@taiga-ui/kit";
+import {TuiCarouselModule, TuiInputDateModule, TuiIslandModule, TuiPaginationModule} from "@taiga-ui/kit";
 import { LastOrdersComponent } from './last-orders/last-orders.component';
 import { FiltersComponent } from './filters/filters.component';
 import { GoodsSectionComponent } from './goods-section/goods-section.component';
@@ -19,6 +25,9 @@ import { HomeComponent } from './home/home.component';
 import { CabinetComponent } from './cabinet/cabinet.component';
 import {RouterModule, Routes} from "@angular/router";
 import {ReactiveFormsModule} from "@angular/forms";
+import {GoodCardComponent} from "./good-card/good-card.component";
+import { ShopCartItemComponent } from './shop-cart-item/shop-cart-item.component';
+import { OrderingComponent } from './ordering/ordering.component';
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -41,7 +50,10 @@ const appRoutes: Routes =[
     ShoppingCartComponent,
     PromocodeFieldComponent,
     HomeComponent,
-    CabinetComponent
+    CabinetComponent,
+    GoodCardComponent,
+    ShopCartItemComponent,
+    OrderingComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +66,8 @@ const appRoutes: Routes =[
     TuiIslandModule,
     RouterModule.forRoot(appRoutes),
     ReactiveFormsModule,
+    TuiTextfieldControllerModule,
+    TuiInputDateModule,
     GraphQLModule,
     HttpClientModule
   ],

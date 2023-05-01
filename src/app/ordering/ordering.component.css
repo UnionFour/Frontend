@@ -1,0 +1,228 @@
+.modal-container {
+  width: min(620px, calc(100% - 30px));
+  position: fixed;
+  z-index: 9999;
+}
+
+.container {
+  position:fixed;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+}
+
+.shadow {
+  box-shadow: 0 0 1000px 0 rgba(6, 5, 50, 0.3);
+  z-index: 9998;
+  height: 538px;
+  position: fixed;
+  max-width: 620px;
+  width: min(620px, calc(100% - 30px));
+  border-radius: 25px;
+  margin: 45px 0 0 0;
+}
+
+.delivery-method {
+  height: 36px;
+  width: 252px;
+  display: flex;
+}
+
+.delivery-method button {
+  border: none;
+  cursor: pointer;
+  width: 126px;
+  height: 36px;
+}
+
+.delivery-button, .pickup-button {
+  background-color: #FFFFFF;
+  font-family: 'Inter', serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+.delivery-button {
+  border-radius: 14px 0 0 14px;
+}
+
+.pickup-button {
+  border-radius: 0 14px 14px 0;
+}
+
+.selected-method-button {
+  background-color: #C5BABE;
+  color: #77616A;
+}
+
+.selected-method-button button:not(.pickup-button):hover {
+
+}
+
+.selected-method-button button:not(.pickup-button):active {
+
+}
+
+.details {
+  margin: 9px 0 0 0;
+  height: 504px;
+  border-radius: 25px;
+  background-color: #FFFFFF;
+  padding: 34px 30px 0 30px;
+  position: relative;
+  /*max-height: 100vh;*/
+  /*overflow-y: scroll;*/
+}
+
+/*.details::-webkit-scrollbar {*/
+/*  width: 0;*/
+/*}*/
+
+.order-header, .promo-code-container {
+  display: flex;
+}
+
+label {
+  display: block;
+  font-family: 'Inter', serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+input {
+  width: 156px;
+  height: 17px;
+  padding: 9px 24px;
+  margin: 0;
+
+  font-family: 'Inter', serif;
+  font-style: normal;
+}
+
+.phone-group {
+  margin: 0 24px 0 0;
+}
+
+
+.phone-input::-webkit-input-placeholder { /* WebKit browsers */
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+}
+.phone-input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+}
+.phone-input::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+}
+.phone-input:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.promo-code-container {
+  margin: 24px 0 0 0;
+}
+
+.promo-code-button, .exit-button {
+  height: 40px;
+  width: 110px;
+  border-radius: 100px;
+  background-color: #FFFFFF;
+  font-weight: 700;
+  border: 2px solid #43AA72;
+  color: #43AA72;
+  cursor: pointer;
+}
+
+.promo-code-button {
+  margin-left: 10px;
+}
+
+.promo-code-input::-webkit-input-placeholder { /* WebKit browsers */
+  color: #aca3a7;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.promo-code-button:disabled {
+  border: 2px solid #C5BABE;
+  color: #C5BABE;
+  cursor: auto;
+}
+
+.promo-code-button:not(:disabled):hover, .exit-button:hover {
+  border: 2px solid #30915C;
+  color: #30915C;
+}
+
+.promo-code-button:not(:disabled):active, .exit-button:active {
+  text-shadow: 4px 4px 20px rgba(67, 170, 114, 0.35);
+}
+
+.promo-code-input:-moz-placeholder { /* WebKit browsers */
+  color: #aca3a7;
+  font-size: 14px;
+  font-weight: 500;
+}
+.promo-code-input::-moz-placeholder { /* WebKit browsers */
+  color: #aca3a7;
+  font-size: 14px;
+  font-weight: 500;
+}
+.promo-code-input:-ms-input-placeholder { /* WebKit browsers */
+  color: #aca3a7;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.details-footer {
+  width: calc(100% - 60px);
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  bottom: 20px;
+}
+
+.details-footer button {
+  display: block;
+}
+
+.send-order-button {
+  border: none;
+  height: 42px;
+  border-radius: 100px;
+  background-color: #43AA72;
+  cursor: pointer;
+  padding-left: 40px;
+  padding-right: 40px;
+
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 24px;
+  color: #FFFFFF;
+}
+
+.send-order-button:hover {
+  color: #EBEBEB;
+  background-color: #369B64;
+}
+
+.send-order-button:active {
+  color: #D1FFE6;
+  background-color: #43AA72;
+}

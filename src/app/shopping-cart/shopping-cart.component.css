@@ -1,10 +1,14 @@
 .cart {
   width: 236px;
-  height: 134px;
+  min-height: 134px;
+  height: content-box;
   background: #FFFFFF;
-  box-shadow: 0px 4px 22px -6px rgba(6, 5, 50, 0.25);
+  box-shadow: 0 4px 22px -6px rgba(6, 5, 50, 0.25);
   border-radius: 16px;
-  padding: 27px 34px 40px 34px;
+  padding: 27px 34px 14px 34px;
+
+  font-family: 'Inter', serif;
+  font-style: normal;
 }
 
 .header {
@@ -16,14 +20,25 @@
 }
 
 p {
-  font-family: 'Inter', serif;
-  font-style: normal;
+  margin: 0;
+}
+
+.help {
   font-weight: 500;
   font-size: 17px;
   line-height: 24px;
   color: #8F8F8F;
-  margin: 33px 0 0 0;
+  margin: 33px 0 26px 0;
   text-align: center;
+}
+
+.products {
+  max-height: 330px;
+  overflow-y: scroll;
+}
+
+.products::-webkit-scrollbar {
+  width: 0;
 }
 
 .cart-name {
@@ -31,4 +46,61 @@ p {
   line-height: 32px;
   color: #5C434D;
   margin: 0;
+}
+
+.sum-container {
+  display: flex;
+}
+
+.products {
+  margin: 36px 0 0 0;
+}
+
+.products .product:last-child {
+  margin-bottom: 0;
+}
+
+.sum-container {
+  margin: 25px 0 0 0;
+}
+
+.sum-text {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  margin: 2px 0 0 0;
+}
+
+.sum {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 27px;
+  margin: 0 0 0 auto;
+}
+
+.order-button {
+  padding: 8px 30px 8px 30px;
+  background: #43AA72;
+  border-radius: 9999px;
+  width: 153px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  margin: 25px auto 0 auto;
+  display: block;
+
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 24px;
+  color: #FFFFFF;
+}
+
+.order-button:hover {
+  background: #369B64;
+  color: #EBEBEB;
+}
+
+.order-button:active {
+  background: #43AA72;
+  color: #D1FFE6;
 }
