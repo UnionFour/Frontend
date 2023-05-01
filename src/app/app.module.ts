@@ -28,6 +28,8 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {GoodCardComponent} from "./good-card/good-card.component";
 import { ShopCartItemComponent } from './shop-cart-item/shop-cart-item.component';
 import { OrderingComponent } from './ordering/ordering.component';
+import { GraphQLModule } from './graphql.module';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes =[
   { path: '', component: HomeComponent},
@@ -65,7 +67,9 @@ const appRoutes: Routes =[
     RouterModule.forRoot(appRoutes),
     ReactiveFormsModule,
     TuiTextfieldControllerModule,
-    TuiInputDateModule
+    TuiInputDateModule,
+    GraphQLModule,
+    HttpClientModule
   ],
   providers: [{provide: TUI_SANITIZER, useClass: NgDompurifySanitizer}],
   bootstrap: [AppComponent]
