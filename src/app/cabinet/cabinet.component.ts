@@ -9,6 +9,13 @@ import { TuiDay } from '@taiga-ui/cdk';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CabinetComponent {
+
+  phone: string;
+
+  constructor() {
+    this.phone = window.localStorage['phone'];
+  }
+
   nameForm : FormGroup = new FormGroup({
     "userName": new FormControl(
       "",

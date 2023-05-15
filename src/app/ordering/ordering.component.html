@@ -14,11 +14,11 @@
       <div class="order-header">
         <form class="phone-group">
           <label for="phone"> Телефон</label>
-          <input id="phone" type="tel" placeholder="89920102299" class="phone-input" disabled>
+          <input id="phone" type="tel" placeholder="{{phone}}" class="phone-input" disabled>
         </form>
         <div class="promo-code-container">
           <form class="promo-code-group" [formGroup]="promoCodeFormGroup">
-            <input id="promo-code" type="text" placeholder="Введите промокод" class="promo-code-input"
+            <input id="promo-code" type="text" placeholder="Промокод" class="promo-code-input"
                    formControlName="promoCode">
           </form>
           <button class="promo-code-button" [disabled]="promoCodeFormGroup.invalid">
@@ -27,8 +27,32 @@
         </div>
       </div>
       <div *ngIf="isDeliverySelected" class="delivery-details">
+        <div class="address-container">
+          <label for="address-group">Адрес</label>
+          <form [formGroup]="addressFormGroup" id="address-group">
+            <input formControlName="street" id="street" placeholder="Улица" class="street-input">
+            <input formControlName="houseNumber" id="house-number" placeholder="Дом" class="house-input">
+            <input formControlName="entrance" id="entrance" placeholder="Подъезд" class="entrance-input">
+            <input formControlName="apartment" id="apartment" placeholder="Квартира" class="apartment-input">
+            <input formControlName="floor" id="floor" placeholder="Этаж" class="floor-input">
+            <input formControlName="doorCode" id="door-code" placeholder="Код двери" class="door-input">
+          </form>
+        </div>
+        <div class="payment-container">
+          <label>Способ оплаты</label>
+          <button [disabled]="paymentMethods.getIsSelected('cash')" (click)="changePaymentMethod($event)" id="cash">
+            Наличные
+          </button>
+          <button [disabled]="paymentMethods.getIsSelected('bankCard')" (click)="changePaymentMethod($event)" id="bankCard">
+            Картой
+          </button>
+          <button [disabled]="paymentMethods.getIsSelected('sberPay')" (click)="changePaymentMethod($event)" id="sberPay">
+            SberPay
+          </button>
+        </div>
       </div>
       <div *ngIf="!isDeliverySelected" class="pickup-details">
+
       </div>
       <div class="details-footer">
         <button class="exit-button" (click)="closeModal()">Назад</button>

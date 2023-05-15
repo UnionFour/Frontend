@@ -7,11 +7,11 @@ import {map, Observable} from "rxjs";
   providedIn: 'root'
 })
 export class AuthService {
-
   constructor(private apollo: Apollo) {
   }
 
   SendSmsCode(phone: string): Observable<AuthPayload> {
+    window.localStorage['phone'] = phone;
     return this.apollo.mutate<{ sendSmsCode: AuthPayload }>({
       mutation: gql`
         mutation SendSmsCode($phone: String!) {
