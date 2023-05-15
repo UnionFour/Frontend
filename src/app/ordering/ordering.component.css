@@ -313,3 +313,16 @@ input:-ms-input-placeholder { /* WebKit browsers */
 .payment-container button:disabled {
   cursor: auto;
 }
+
+.pick-up-input{
+  width: 100%;
+  height: 100%;
+}
+
+.pick-up-input:hover {
+  border: none;
+}
+
+.pickup-details label {
+  margin-top: 28px;
+}

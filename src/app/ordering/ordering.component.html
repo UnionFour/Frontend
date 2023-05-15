@@ -52,7 +52,23 @@
         </div>
       </div>
       <div *ngIf="!isDeliverySelected" class="pickup-details">
-
+        <label>Адрес</label>
+        <tui-select
+          tuiTextfieldSize="m"
+          class="tui-space_vertical-4"
+          [formControl]="pickUpValue"
+          [tuiTextfieldLabelOutside]="true"
+        >
+          <input
+            class="pick-up-input"
+            tuiTextfield
+            placeholder="Откуда заберёте?"
+          />
+          <tui-data-list-wrapper
+            *tuiDataList
+            [items]="pickUpAddresses"
+          ></tui-data-list-wrapper>
+        </tui-select>
       </div>
       <div class="details-footer">
         <button class="exit-button" (click)="closeModal()">Назад</button>

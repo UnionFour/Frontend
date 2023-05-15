@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Order } from "../../assets/classes/order";
 import {OrderingService} from "../services/ordering.service";
@@ -40,7 +40,8 @@ class PaymentMethods{
 @Component({
   selector: 'app-ordering',
   templateUrl: './ordering.component.html',
-  styleUrls: ['./ordering.component.css', '../../assets/styles/shady-input.css']
+  styleUrls: ['./ordering.component.css', '../../assets/styles/shady-input.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class OrderingComponent {
 
@@ -52,6 +53,8 @@ export class OrderingComponent {
   isDeliverySelected: boolean = true;
   order: Order;
   phone: string;
+  pickUpAddresses: string[] = ['Ленина 32', 'Кунарская 15'];
+  pickUpValue = new FormControl();
 
   constructor(private orderingService: OrderingService, private router: Router) {
     this.order = orderingService.order!;

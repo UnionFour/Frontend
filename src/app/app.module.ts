@@ -17,12 +17,12 @@ import {HeaderComponent} from './header/header.component';
 import {NavigationComponent} from './navigation/navigation.component';
 import {PromotionsComponent} from './promotions/promotions.component';
 import {
-  TuiCarouselModule,
+  TuiCarouselModule, TuiDataListWrapperModule,
   TuiInputDateModule,
   TuiInputModule,
   TuiInputPhoneModule,
   TuiIslandModule,
-  TuiPaginationModule
+  TuiPaginationModule, TuiSelectModule
 } from "@taiga-ui/kit";
 import {LastOrdersComponent} from './last-orders/last-orders.component';
 import {FiltersComponent} from './filters/filters.component';
@@ -83,7 +83,9 @@ import {AppRoutingModule} from "./app-routing.module";
     TuiFormatPhonePipeModule,
     TuiInputPhoneModule,
     NgxMaskDirective,
-    NgxMaskPipe
+    NgxMaskPipe,
+    TuiSelectModule,
+    TuiDataListWrapperModule
   ],
   providers: [{provide: TUI_SANITIZER, useClass: NgDompurifySanitizer}, provideNgxMask()],
   bootstrap: [AppComponent]
