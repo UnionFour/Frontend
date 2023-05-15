@@ -41,13 +41,7 @@ import {GraphQLModule} from './graphql.module';
 import {HttpClientModule} from '@angular/common/http';
 import {LoginComponent} from './login/login.component';
 import {NgxMaskDirective, NgxMaskPipe, provideNgxMask} from "ngx-mask";
-
-const appRoutes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'cabinet', component: CabinetComponent},
-  {path: 'login', component: LoginComponent},
-  {path: '**', component: HomeComponent}
-];
+import {AppRoutingModule} from "./app-routing.module";
 
 @NgModule({
   declarations: [
@@ -69,6 +63,7 @@ const appRoutes: Routes = [
     LoginComponent
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
     TuiRootModule,
@@ -77,7 +72,6 @@ const appRoutes: Routes = [
     TuiCarouselModule,
     TuiPaginationModule,
     TuiIslandModule,
-    RouterModule.forRoot(appRoutes),
     ReactiveFormsModule,
     TuiTextfieldControllerModule,
     TuiInputDateModule,

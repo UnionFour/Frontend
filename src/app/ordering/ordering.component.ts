@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Order } from "../../assets/classes/order";
+import {OrderingService} from "../services/ordering.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-ordering',
@@ -9,10 +11,12 @@ import { Order } from "../../assets/classes/order";
 })
 export class OrderingComponent {
 
-  @Input() order!: Order;
-  @Output() isOpenModal: EventEmitter<boolean> = new EventEmitter<boolean>();
-
   isDeliverySelected: boolean = true;
+  order: Order;
+
+  constructor(private orderingService: OrderingService, private router: Router) {
+    this.order = orderingService.order!;
+  }
 
   phoneFormGroup : FormGroup = new FormGroup({
     "phone": new FormControl()
@@ -30,6 +34,6 @@ export class OrderingComponent {
   }
 
   closeModal() {
-    this.isOpenModal.emit(false);
+    this.router.navigateByUrl('').then();
   }
 }

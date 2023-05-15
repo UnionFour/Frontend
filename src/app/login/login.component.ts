@@ -1,10 +1,11 @@
-import {Component, Inject, OnDestroy, OnInit} from '@angular/core';
+import {Component, Inject, Injector, OnDestroy, OnInit} from '@angular/core';
 import {FormControl, Validators} from "@angular/forms";
 import {Subscription} from "rxjs";
 import {AuthService} from "../services/auth/auth.service";
 import {AuthPayload} from "../../gql/graphql";
-import {TuiDialogContext} from "@taiga-ui/core";
-import {POLYMORPHEUS_CONTEXT} from '@tinkoff/ng-polymorpheus';
+import {TuiDialogContext, TuiDialogService} from "@taiga-ui/core";
+import {POLYMORPHEUS_CONTEXT, PolymorpheusComponent} from '@tinkoff/ng-polymorpheus';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -12,6 +13,7 @@ import {POLYMORPHEUS_CONTEXT} from '@tinkoff/ng-polymorpheus';
   styleUrls: ['./login.component.css', '../cabinet/cabinet.component.css']
 })
 export class LoginComponent implements OnInit, OnDestroy {
+
   public phone: FormControl = new FormControl<string>("+7", Validators.minLength(12));
 
   public code: FormControl = new FormControl<number | null>(null,
@@ -23,7 +25,8 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   constructor(private authService: AuthService,
               @Inject(POLYMORPHEUS_CONTEXT)
-              private readonly context: TuiDialogContext) {
+              private readonly context: TuiDialogContext<boolean>,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -35,7 +38,7 @@ export class LoginComponent implements OnInit, OnDestroy {
           smsCode: this.code.value
         }).subscribe((jwt: string) => {
           window.localStorage["jwt"] = jwt;
-          this.context.completeWith();
+          this.context.completeWith(true);
         });
       }
     })
