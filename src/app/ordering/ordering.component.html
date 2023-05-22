@@ -72,7 +72,7 @@
       </div>
       <div class="details-footer">
         <button class="exit-button" (click)="closeModal()">Назад</button>
-        <button class="send-order-button">Заказать за {{order.orderSum}}₽</button>
+        <button class="send-order-button" (click)="closeModal()">Заказать за {{order.orderSum}}₽</button>
       </div>
     </div>
   </div>
