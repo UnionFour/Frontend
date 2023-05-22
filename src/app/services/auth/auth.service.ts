@@ -1,13 +1,28 @@
-import {Injectable} from '@angular/core';
+import {Injectable } from '@angular/core';
 import {Apollo, gql} from 'apollo-angular'
 import {AuthPayload, TokenInput} from 'src/gql/graphql';
-import {map, Observable} from "rxjs";
+import {map, Observable, Subject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+
+  public authorization$ = new Subject<boolean>();
+  public isAuthorized: boolean = false;
+
   constructor(private apollo: Apollo) {
+    this.authorization$.next(!!window.localStorage["jwt"]);
+    this.isAuthorized = !!window.localStorage["jwt"];
+  }
+
+  SignIn(): void {
+    this.authorization$.next(true);
+  }
+
+  SignOut(): void {
+    this.authorization$.next(false);
+    window.localStorage.clear();
   }
 
   SendSmsCode(phone: string): Observable<AuthPayload> {

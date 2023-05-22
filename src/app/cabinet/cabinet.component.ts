@@ -1,6 +1,8 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { TuiDay } from '@taiga-ui/cdk';
+import {AuthService} from "../services/auth/auth.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-cabinet',
@@ -12,7 +14,7 @@ export class CabinetComponent {
 
   phone: string;
 
-  constructor() {
+  constructor(private authService: AuthService, private router: Router) {
     this.phone = window.localStorage['phone'];
   }
 
@@ -42,4 +44,9 @@ export class CabinetComponent {
       ]
     )
   });
+
+  signOut() {
+    this.authService.SignOut();
+    this.router.navigateByUrl('').then();
+  }
 }

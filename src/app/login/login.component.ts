@@ -1,4 +1,4 @@
-import {Component, Inject, Injector, OnDestroy, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Inject, Injector, OnDestroy, OnInit} from '@angular/core';
 import {FormControl, Validators} from "@angular/forms";
 import {Subscription} from "rxjs";
 import {AuthService} from "../services/auth/auth.service";
@@ -10,7 +10,7 @@ import {Router} from "@angular/router";
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css', '../cabinet/cabinet.component.css']
+  styleUrls: ['./login.component.css', '../cabinet/cabinet.component.css'],
 })
 export class LoginComponent implements OnInit, OnDestroy {
 
@@ -38,6 +38,7 @@ export class LoginComponent implements OnInit, OnDestroy {
           smsCode: this.code.value
         }).subscribe((jwt: string) => {
           window.localStorage["jwt"] = jwt;
+          this.authService.SignIn();
           this.context.completeWith(true);
         });
       }
