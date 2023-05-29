@@ -1,0 +1,21 @@
+button {
+  border: none;
+  cursor: pointer;
+  background-color: #FFFFFF;
+  color: #30915C;
+  font-family: 'Inter', serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  display: block;
+  width: 100%;
+  margin: 20px 0 0 0;
+}
+
+button:hover {
+  color: #2A8955;
+}
+
+button:active {
+  text-shadow: 0 0 6px rgba(67, 170, 114, 0.35);
+}
