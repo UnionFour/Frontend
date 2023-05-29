@@ -9,5 +9,13 @@
   <label for="code">
     Введите код:
   </label>
-  <input id="code" type="text" [formControl]="code" mask="000000">
+  <tui-input
+    tuiTextfieldSize="m"
+    [tuiTextfieldLabelOutside]="true"
+  >
+    <input
+      tuiTextfield
+      id="code" type="text" [formControl]="code" mask="000000"
+    />
+  </tui-input>
 </ng-template>
