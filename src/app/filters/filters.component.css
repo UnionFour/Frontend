@@ -1,7 +1,7 @@
 .filter-container {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 0 68px 0;
+  margin: 40px 0 68px 0;
 }
 
 p, .filter-button-name {

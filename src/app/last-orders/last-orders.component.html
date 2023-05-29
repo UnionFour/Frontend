@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="isAuthorized">
   <h1>Последние заказы</h1>
   <tui-carousel [itemsCount]="itemsCount" [(index)]="index" [draggable]="true">
     <ng-container *ngFor="let item of items">

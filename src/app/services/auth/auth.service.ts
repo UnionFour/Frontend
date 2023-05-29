@@ -8,19 +8,20 @@ import {map, Observable, Subject} from "rxjs";
 })
 export class AuthService {
 
-  public authorization$ = new Subject<boolean>();
-  public isAuthorized: boolean = false;
+  public authorization$: Subject<boolean> = new Subject<boolean>();
 
   constructor(private apollo: Apollo) {
-    this.authorization$.next(!!window.localStorage["jwt"]);
-    this.isAuthorized = !!window.localStorage["jwt"];
+    console.log('сервис имеет: ' + !!window.localStorage['jwt']);
+    this.authorization$.next(!!window.localStorage['jwt']);
   }
 
   SignIn(): void {
+    console.log('сервис имеет: ' + !!window.localStorage['jwt']);
     this.authorization$.next(true);
   }
 
   SignOut(): void {
+    console.log('сервис имеет: ' + false);
     this.authorization$.next(false);
     window.localStorage.clear();
   }

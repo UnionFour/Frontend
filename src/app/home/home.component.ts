@@ -6,18 +6,5 @@ import {AuthService} from "../services/auth/auth.service";
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
-
-  isAuthorized!: boolean;
-
-  constructor(private readonly authService: AuthService) {
-    this.isAuthorized = this.authService.isAuthorized;
-  }
-
-  ngOnInit() {
-    this.authService.authorization$.subscribe((authValue) => {
-      this.isAuthorized = authValue;
-    });
-  }
-
+export class HomeComponent {
 }
