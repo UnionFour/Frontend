@@ -42,6 +42,8 @@ import {HttpClientModule} from '@angular/common/http';
 import {LoginComponent} from './login/login.component';
 import {NgxMaskDirective, NgxMaskPipe, provideNgxMask} from "ngx-mask";
 import {AppRoutingModule} from "./app-routing.module";
+import {GameComponent} from "./game/game.component";
+import {AboutUsComponent} from "./about-us/about-us.component";
 
 @NgModule({
   declarations: [
@@ -60,7 +62,9 @@ import {AppRoutingModule} from "./app-routing.module";
     GoodCardComponent,
     ShopCartItemComponent,
     OrderingComponent,
-    LoginComponent
+    LoginComponent,
+    GameComponent,
+    AboutUsComponent
   ],
   imports: [
     AppRoutingModule,

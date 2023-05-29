@@ -6,6 +6,8 @@ import {RouterModule, Routes} from "@angular/router";
 import {AuthGuard} from "./auth.guard";
 import {OrderingComponent} from "./ordering/ordering.component";
 import {OrderingGuard} from "./ordering.guard";
+import {GameComponent} from "./game/game.component";
+import {AboutUsComponent} from "./about-us/about-us.component";
 
 const routes: Routes = [
   {
@@ -22,6 +24,16 @@ const routes: Routes = [
     component: CabinetComponent,
     pathMatch: 'full',
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'game',
+    component: GameComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: 'about',
+    component: AboutUsComponent,
+    pathMatch: 'full'
   },
   {
     path: '**',
