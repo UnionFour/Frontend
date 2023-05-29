@@ -15,11 +15,11 @@ export class LastOrdersComponent implements OnInit{
   readonly itemsCount = 4;
 
   readonly items = [
-    {title: 'Пепперони фреш', content: 'от 289 ₽', imgSrc: 'assets/img/last_orders_picture1.png'},
-    {title: 'Пепперони фреш', content: 'от 289 ₽', imgSrc: 'assets/img/last_orders_picture1.png'},
-    {title: 'Пепперони фреш', content: 'от 289 ₽', imgSrc: 'assets/img/last_orders_picture1.png'},
-    {title: 'Пепперони фреш', content: 'от 289 ₽', imgSrc: 'assets/img/last_orders_picture1.png'},
-    {title: 'Пепперони фреш', content: 'от 289 ₽', imgSrc: 'assets/img/last_orders_picture1.png'}
+    {title: 'Пепперони', content: 'от 299 ₽', imgSrc: 'assets/img/last_orders_picture1.png'},
+    {title: 'Пепперони', content: 'от 299 ₽', imgSrc: 'assets/img/last_orders_picture1.png'},
+    {title: 'Пепперони', content: 'от 299 ₽', imgSrc: 'assets/img/last_orders_picture1.png'},
+    {title: 'Пепперони', content: 'от 299 ₽', imgSrc: 'assets/img/last_orders_picture1.png'},
+    {title: 'Пепперони', content: 'от 299 ₽', imgSrc: 'assets/img/last_orders_picture1.png'}
   ];
 
   constructor(private readonly _authService: AuthService, public changeRef: ChangeDetectorRef) {

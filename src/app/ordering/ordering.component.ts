@@ -1,8 +1,9 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { Order } from "../../assets/classes/order";
-import {OrderingService} from "../services/ordering.service";
-import {Router} from "@angular/router";
+import {Component, ChangeDetectionStrategy, OnInit} from '@angular/core';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {Order } from '../../assets/classes/order';
+import {OrderingService} from '../services/ordering.service';
+import {Router} from '@angular/router';
+import {Observable, fromEvent, Subscription} from 'rxjs';
 
 class PaymentMethod{
   name: string;
@@ -43,7 +44,7 @@ class PaymentMethods{
   styleUrls: ['./ordering.component.css', '../../assets/styles/shady-input.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class OrderingComponent {
+export class OrderingComponent implements OnInit{
 
   paymentMethods: PaymentMethods = new PaymentMethods(
     new PaymentMethod('cash', true),
@@ -56,10 +57,9 @@ export class OrderingComponent {
   pickUpAddresses: string[] = ['Ленина 32', 'Кунарская 15'];
   pickUpValue = new FormControl();
 
-  constructor(private orderingService: OrderingService, private router: Router) {
-    this.order = orderingService.order!;
-    this.phone = window.localStorage['phone'];
-  }
+  private _documentClick$: Observable<Event> = fromEvent(document, 'click');
+  private _documentKeyDown$: Observable<Event> = fromEvent(document, 'keydown');
+  private _subscriptions: Subscription[] = [];
 
   promoCodeFormGroup: FormGroup = new FormGroup({
     "promoCode": new FormControl(
@@ -85,6 +85,46 @@ export class OrderingComponent {
     }
   );
 
+  constructor(private orderingService: OrderingService, private router: Router) {
+    this.order = orderingService.order!;
+    this.phone = window.localStorage['phone'];
+  }
+
+  public ngOnInit(): void {
+    const context: OrderingComponent = this;
+    setTimeout(function(): void {
+      context.clickOutsideSubscribe(context);
+      context.keyDownSubscribe(context);
+    }, 100);
+  }
+
+  public closeModal(): void {
+    this._subscriptions.forEach((subscription: Subscription) => subscription.unsubscribe());
+    this.router.navigateByUrl('').then();
+  }
+
+  public clickOutsideSubscribe(context: OrderingComponent): void {
+    const clickSubscription: Subscription =
+      context._documentClick$.subscribe((evt: Event): void => {
+        const authRef: Element = document.querySelector('.modal-container')!;
+        if (!evt.composedPath().includes(authRef!)) {
+          context.closeModal();
+        }
+      });
+    context._subscriptions.push(clickSubscription);
+  }
+
+  public keyDownSubscribe(context: OrderingComponent): void {
+    const keyDownSubscription: Subscription =
+      context._documentKeyDown$.subscribe((evt: Event): void => {
+          if ((evt as KeyboardEvent).code === 'Escape') {
+            context.closeModal();
+          }
+        }
+      );
+    context._subscriptions.push(keyDownSubscription);
+  }
+
   changePaymentMethod(event: Event) {
     let target = event.target as HTMLInputElement;
     this.paymentMethods.chooseMethod(target.id);
@@ -92,9 +132,5 @@ export class OrderingComponent {
 
   changeDeliveryMethod() {
     this.isDeliverySelected = !this.isDeliverySelected;
-  }
-
-  closeModal() {
-    this.router.navigateByUrl('').then();
   }
 }
