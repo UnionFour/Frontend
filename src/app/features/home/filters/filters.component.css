@@ -1,7 +1,57 @@
+@media (min-width: 1021px) {
+}
+
+@media (min-width: 850px) and (max-width: 1020px) {
+  .filter-container .filter-button:last-child {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media (min-width: 688px) and (max-width: 849px) {
+  .filter-container .filter-button:nth-child(5) {
+    margin-left: 30%;
+  }
+}
+
+@media (min-width: 623px) and (max-width: 687px) {
+  .filter-container .filter-button:nth-child(4) {
+    margin-left: 5%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 622px) {
+  .filter-container .filter-button:nth-child(4) {
+    margin-left: 0;
+  }
+
+  .filter-container .filter-button:last-child {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 575px) {
+  p {
+    margin-right: 10%!important;
+  }
+
+  .filter-container .filter-button:nth-child(4) {
+    margin-left: 15%;
+  }
+
+  .filter-container .filter-button:last-child {
+    margin-left: 35%;
+  }
+}
+
+.container {
+  display: flex;
+  margin: 40px 0 68px 0;
+}
+
 .filter-container {
   display: flex;
   flex-wrap: wrap;
-  margin: 40px 0 68px 0;
 }
 
 p, .filter-button-name {
@@ -40,6 +90,7 @@ p {
 }
 
 .sort-button {
-  margin: auto 0 20px 20px;
+  margin: 9px 0 20px 20px;
   cursor: pointer;
+  align-self: start;
 }
