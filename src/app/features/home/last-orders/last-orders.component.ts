@@ -11,29 +11,48 @@ export class LastOrdersComponent implements OnInit{
 
   public isAuthorized: boolean;
 
-  index = 0;
-  readonly itemsCount = 4;
+  public index: number = 0;
+  public itemsCount: number = 4;
 
   readonly items = [
     {title: 'Пепперони', content: 'от 299 ₽', imgSrc: 'assets/img/last_orders_picture1.png'},
     {title: 'Пепперони', content: 'от 299 ₽', imgSrc: 'assets/img/last_orders_picture1.png'},
     {title: 'Пепперони', content: 'от 299 ₽', imgSrc: 'assets/img/last_orders_picture1.png'},
     {title: 'Пепперони', content: 'от 299 ₽', imgSrc: 'assets/img/last_orders_picture1.png'},
-    {title: 'Пепперони', content: 'от 299 ₽', imgSrc: 'assets/img/last_orders_picture1.png'}
+    {title: 'Пепперони', content: 'от 299 ₽', imgSrc: 'assets/img/last_orders_picture1.png'},
+    {title: 'Пепперони', content: 'от 299 ₽', imgSrc: 'assets/img/last_orders_picture1.png'},
+    {title: 'Пепперони', content: 'от 299 ₽', imgSrc: 'assets/img/last_orders_picture1.png'},
   ];
 
   constructor(private readonly _authService: AuthService, public changeRef: ChangeDetectorRef) {
-    console.log('компонента имеет:' + !!window.localStorage['jwt']);
     this.isAuthorized = !!window.localStorage['jwt'];
+    if (window.innerWidth < 1190 && window.innerWidth >= 800) {
+      this.itemsCount = 3;
+      this.changeRef.markForCheck();
+    } else if (window.innerWidth < 800) {
+      this.itemsCount = 2;
+      this.changeRef.markForCheck();
+    }
   }
 
   public ngOnInit(): void {
     const context: LastOrdersComponent = this;
     this._authService.authorization$.subscribe((isAuthorized: boolean): void => {
-      console.log('компонента имеет:' + isAuthorized);
       context.isAuthorized = isAuthorized;
       context.changeRef.markForCheck();
     });
+    window.onresize = function (): void {
+      if (window.innerWidth >= 1190 && context.itemsCount !== 4) {
+        context.itemsCount = 4;
+        context.changeRef.markForCheck();
+      } else if (window.innerWidth < 1190 && window.innerWidth >= 800 && context.itemsCount !== 3) {
+        context.itemsCount = 3;
+        context.changeRef.markForCheck();
+      } else if (window.innerWidth < 800 && context.itemsCount !== 2) {
+        context.itemsCount = 2;
+        context.changeRef.markForCheck();
+      }
+    };
   }
 
   get rounded(): number {

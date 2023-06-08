@@ -11,17 +11,14 @@ export class AuthService {
   public authorization$: Subject<boolean> = new Subject<boolean>();
 
   constructor(private apollo: Apollo) {
-    console.log('сервис имеет: ' + !!window.localStorage['jwt']);
     this.authorization$.next(!!window.localStorage['jwt']);
   }
 
   SignIn(): void {
-    console.log('сервис имеет: ' + !!window.localStorage['jwt']);
     this.authorization$.next(true);
   }
 
   SignOut(): void {
-    console.log('сервис имеет: ' + false);
     this.authorization$.next(false);
     window.localStorage.clear();
   }
