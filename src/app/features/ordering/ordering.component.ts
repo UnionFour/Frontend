@@ -1,7 +1,7 @@
 import {Component, ChangeDetectionStrategy, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {Order } from '../../assets/classes/order';
-import {OrderingService} from '../services/ordering.service';
+import {Order } from '../../../assets/classes/order';
+import {OrderingService} from '../../core/services/ordering.service';
 import {Router} from '@angular/router';
 import {Observable, fromEvent, Subscription} from 'rxjs';
 
@@ -41,7 +41,7 @@ class PaymentMethods{
 @Component({
   selector: 'app-ordering',
   templateUrl: './ordering.component.html',
-  styleUrls: ['./ordering.component.css', '../../assets/styles/shady-input.css'],
+  styleUrls: ['./ordering.component.css', '../../../assets/styles/shady-input.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class OrderingComponent implements OnInit{

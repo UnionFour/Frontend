@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component, Injector} from '@angular/core';
 import {TuiDialogService} from "@taiga-ui/core";
 import {PolymorpheusComponent} from '@tinkoff/ng-polymorpheus';
-import {LoginComponent} from "../login/login.component";
+import {LoginComponent} from "../../core/login/login.component";
 
 @Component({
   selector: 'app-header',

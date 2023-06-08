@@ -1,10 +1,10 @@
 import {Injectable, Injector} from "@angular/core";
 import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot} from "@angular/router";
-import {OrderingService} from "./services/ordering.service";
+import {OrderingService} from "./core/services/ordering.service";
 import {Observable, of} from "rxjs";
 import {PolymorpheusComponent} from "@tinkoff/ng-polymorpheus";
-import {LoginComponent} from "./login/login.component";
-import {AuthService} from "./services/auth/auth.service";
+import {LoginComponent} from "./core/login/login.component";
+import {AuthService} from "./core/services/auth.service";
 import {TuiDialogService} from "@taiga-ui/core";
 
 @Injectable({

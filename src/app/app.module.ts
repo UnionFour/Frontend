@@ -13,9 +13,9 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
 import {AppComponent} from './app.component';
-import {HeaderComponent} from './header/header.component';
-import {NavigationComponent} from './navigation/navigation.component';
-import {PromotionsComponent} from './promotions/promotions.component';
+import {HeaderComponent} from './shared/header/header.component';
+import {NavigationComponent} from './shared/navigation/navigation.component';
+import {PromotionsComponent} from './features/home/promotions/promotions.component';
 import {
   TuiCarouselModule, TuiDataListWrapperModule,
   TuiInputDateModule,
@@ -24,26 +24,26 @@ import {
   TuiIslandModule,
   TuiPaginationModule, TuiSelectModule
 } from "@taiga-ui/kit";
-import {LastOrdersComponent} from './last-orders/last-orders.component';
-import {FiltersComponent} from './filters/filters.component';
-import {GoodsSectionComponent} from './goods-section/goods-section.component';
-import {FooterComponent} from './footer/footer.component';
-import {ShoppingCartComponent} from './shopping-cart/shopping-cart.component';
-import {PromocodeFieldComponent} from './promocode-field/promocode-field.component';
-import {HomeComponent} from './home/home.component';
-import {CabinetComponent} from './cabinet/cabinet.component';
+import {LastOrdersComponent} from './features/home/last-orders/last-orders.component';
+import {FiltersComponent} from './features/home/filters/filters.component';
+import {GoodsSectionComponent} from './features/goods-media/goods-section/goods-section.component';
+import {FooterComponent} from './shared/footer/footer.component';
+import {ShoppingCartComponent} from './features/shopping-cart-parts/shopping-cart/shopping-cart.component';
+import {PromocodeFieldComponent} from './features/shopping-cart-parts/promocode-field/promocode-field.component';
+import {HomeComponent} from './features/home/home.component';
+import {CabinetComponent} from './features/cabinet/cabinet.component';
 import {RouterModule, Routes} from "@angular/router";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {GoodCardComponent} from "./good-card/good-card.component";
-import {ShopCartItemComponent} from './shop-cart-item/shop-cart-item.component';
-import {OrderingComponent} from './ordering/ordering.component';
+import {GoodCardComponent} from "./features/goods-media/good-card/good-card.component";
+import {ShopCartItemComponent} from './features/shopping-cart-parts/shop-cart-item/shop-cart-item.component';
+import {OrderingComponent} from './features/ordering/ordering.component';
 import {GraphQLModule} from './graphql.module';
 import {HttpClientModule} from '@angular/common/http';
-import {LoginComponent} from './login/login.component';
+import {LoginComponent} from './core/login/login.component';
 import {NgxMaskDirective, NgxMaskPipe, provideNgxMask} from "ngx-mask";
 import {AppRoutingModule} from "./app-routing.module";
-import {GameComponent} from "./game/game.component";
-import {AboutUsComponent} from "./about-us/about-us.component";
+import {GameComponent} from "./features/game/game.component";
+import {AboutUsComponent} from "./features/about-us/about-us.component";
 
 @NgModule({
   declarations: [

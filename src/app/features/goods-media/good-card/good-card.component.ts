@@ -1,6 +1,6 @@
 import { Input, Component } from '@angular/core';
-import { SelectingProductsService } from "../services/selecting-products.service";
-import { Product } from "../../assets/classes/product";
+import { SelectingProductsService } from "../../../core/services/selecting-products.service";
+import { Product } from "../../../../assets/classes/product";
 
 @Component({
   selector: 'good-card',

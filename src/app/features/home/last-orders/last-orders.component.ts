@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit} from '@angular/core';
-import {AuthService} from "../services/auth/auth.service";
+import {AuthService} from "../../../core/services/auth.service";
 
 @Component({
   selector: 'app-last-orders',

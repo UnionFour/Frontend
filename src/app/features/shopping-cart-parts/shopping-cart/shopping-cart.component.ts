@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { SelectingProductsService } from "../services/selecting-products.service";
-import { DelayedProduct } from "../../assets/classes/delayed-product";
-import { Order } from "../../assets/classes/order";
-import { OrderingService } from "../services/ordering.service";
+import { SelectingProductsService } from "../../../core/services/selecting-products.service";
+import { DelayedProduct } from "../../../../assets/classes/delayed-product";
+import { Order } from "../../../../assets/classes/order";
+import { OrderingService } from "../../../core/services/ordering.service";
 import {Router} from "@angular/router";
 
 @Component({

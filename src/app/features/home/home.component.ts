@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {AuthService} from "../services/auth/auth.service";
+import {AuthService} from "../../core/services/auth.service";
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-home-media',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })

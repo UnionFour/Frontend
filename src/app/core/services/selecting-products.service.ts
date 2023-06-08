@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Product } from 'src/assets/classes/product'
-import { DelayedProduct } from "../../assets/classes/delayed-product";
+import { DelayedProduct } from "../../../assets/classes/delayed-product";
 import { Order } from 'src/assets/classes/order'
 
 @Injectable({

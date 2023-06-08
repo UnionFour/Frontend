@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
-import {HomeComponent} from "./home/home.component";
-import {CabinetComponent} from "./cabinet/cabinet.component";
-import {LoginComponent} from "./login/login.component";
+import {HomeComponent} from "./features/home/home.component";
+import {CabinetComponent} from "./features/cabinet/cabinet.component";
+import {LoginComponent} from "./core/login/login.component";
 import {RouterModule, Routes} from "@angular/router";
 import {AuthGuard} from "./auth.guard";
-import {OrderingComponent} from "./ordering/ordering.component";
+import {OrderingComponent} from "./features/ordering/ordering.component";
 import {OrderingGuard} from "./ordering.guard";
-import {GameComponent} from "./game/game.component";
-import {AboutUsComponent} from "./about-us/about-us.component";
+import {GameComponent} from "./features/game/game.component";
+import {AboutUsComponent} from "./features/about-us/about-us.component";
 
 const routes: Routes = [
   {

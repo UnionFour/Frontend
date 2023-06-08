@@ -1,13 +1,13 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { TuiDay } from '@taiga-ui/cdk';
-import {AuthService} from "../services/auth/auth.service";
+import {AuthService} from "../../core/services/auth.service";
 import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-cabinet',
   templateUrl: './cabinet.component.html',
-  styleUrls: ['./cabinet.component.css', '../../assets/styles/shady-input.css'],
+  styleUrls: ['./cabinet.component.css', '../../../assets/styles/shady-input.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CabinetComponent {

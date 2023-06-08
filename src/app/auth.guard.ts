@@ -1,9 +1,9 @@
 import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree} from '@angular/router';
 import {Injectable, Injector} from "@angular/core";
-import {AuthService} from "./services/auth/auth.service";
+import {AuthService} from "./core/services/auth.service";
 import {TuiDialogService} from "@taiga-ui/core";
 import {PolymorpheusComponent} from "@tinkoff/ng-polymorpheus";
-import {LoginComponent} from "./login/login.component";
+import {LoginComponent} from "./core/login/login.component";
 
 @Injectable({
   providedIn: 'root'

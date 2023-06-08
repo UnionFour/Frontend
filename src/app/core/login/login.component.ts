@@ -1,8 +1,8 @@
 import {ChangeDetectionStrategy, Component, Inject, Injector, OnDestroy, OnInit} from '@angular/core';
 import {FormControl, Validators} from "@angular/forms";
 import {Subscription} from "rxjs";
-import {AuthService} from "../services/auth/auth.service";
-import {AuthPayload} from "../../gql/graphql";
+import {AuthService} from "../services/auth.service";
+import {AuthPayload} from "../../../gql/graphql";
 import {TuiDialogContext, TuiDialogService} from "@taiga-ui/core";
 import {POLYMORPHEUS_CONTEXT, PolymorpheusComponent} from '@tinkoff/ng-polymorpheus';
 import {Router} from "@angular/router";
@@ -10,7 +10,7 @@ import {Router} from "@angular/router";
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css', '../cabinet/cabinet.component.css'],
+  styleUrls: ['./login.component.css', '../../features/cabinet/cabinet.component.css'],
 })
 export class LoginComponent implements OnInit, OnDestroy {
 
