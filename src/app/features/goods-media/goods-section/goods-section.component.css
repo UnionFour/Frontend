@@ -1,6 +1,6 @@
 @media (min-width: 1336px) {
   .goods-container {
-    margin: 0 0 68px 0;
+    /*margin: 0 0 68px 0;*/
     width: calc(100% - 374px);
   }
 }
@@ -37,6 +37,7 @@
   font-family: 'Inter', serif;
   font-style: normal;
   display: inline-block;
+  margin-bottom: 68px;
 }
 
 .good-cards {
