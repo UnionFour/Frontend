@@ -1,6 +1,6 @@
 <tui-carousel [duration]="6000" [(index)]="index">
-  <ng-container *ngFor="let item of items">
-    <div *tuiItem>
+  <ng-container *ngFor="let item of items" class="promotion-img-container">
+    <div *tuiItem class="promotion-img-container">
       <img class="promotion-img" [attr.src]="item" alt="promotion">
     </div>
   </ng-container>

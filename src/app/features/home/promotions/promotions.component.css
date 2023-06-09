@@ -1,6 +1,9 @@
 .promotion-img {
   width: 100%;
-  border-radius: 22px;
+}
+
+tui-carousel {
+  border-radius: 22px!important;
 }
 
 tui-pagination {
