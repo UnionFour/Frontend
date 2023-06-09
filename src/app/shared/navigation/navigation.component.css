@@ -1,7 +1,12 @@
+nav {
+  background-color: #FFFFFF;
+  padding: 10px 0 10px 0;
+}
+
 nav a {
   display: inline-block;
   margin: 0 31px 0 0;
-  padding: 19px 0 19px 0;
+  padding: 9px 0 9px 0;
   font-family: 'Inter', serif;
   font-style: normal;
   font-weight: 600;
@@ -19,8 +24,4 @@ nav a:hover {
 
 nav a:active {
   color: #2A8955;
-}
-
-nav {
-  background-color: #FFFFFF;
 }
