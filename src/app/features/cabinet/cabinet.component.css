@@ -1,3 +1,40 @@
+h1 {
+  margin: 50px 0 68px 0;
+  font-size: 26px;
+}
+
+@media (min-width: 1600px) {
+  .account-container {
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 757px) and (max-width: 1599px) {
+  .account-container {
+    margin-left: calc(150px - 10vw);
+  }
+}
+
+@media (min-width: 650px) and (max-width: 756px) {
+  .account-container {
+    margin-left: calc(150px - 10vw);
+  }
+
+  h1 {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 649px) {
+  .account-container {
+    margin-left: calc(50vw - 240px);
+  }
+
+  h1 {
+    margin-top: 10px;
+  }
+}
+
 label {
   display: block;
   font-family: 'Inter', serif;
@@ -5,11 +42,6 @@ label {
   font-weight: 600;
   font-size: 20px;
   line-height: 24px;
-}
-
-h1 {
-  margin: 50px 0 68px 0;
-  font-size: 26px;
 }
 
 .form-group {
@@ -58,7 +90,7 @@ h1 {
   border-radius: 9999px;
   border: none;
   cursor: pointer;
-  margin: 125px 0 0 0;
+  margin: 125px 0 20px 0;
 }
 
 .exit-button:hover {
