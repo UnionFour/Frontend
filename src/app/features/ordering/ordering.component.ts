@@ -22,14 +22,14 @@ class PaymentMethods{
     this.paymentMethods = methods;
   }
 
-  chooseMethod(methodName: string){
-    this.paymentMethods.forEach((method: PaymentMethod) => {
+  chooseMethod(methodName: string): void{
+    this.paymentMethods.forEach((method: PaymentMethod): void => {
       method.isSelected = method.name === methodName;
     });
   }
 
   getIsSelected(methodName: string): boolean {
-    for (let i = 0; i < this.paymentMethods.length; i++) {
+    for (let i: number = 0; i < this.paymentMethods.length; i++) {
       if (this.paymentMethods[i].name == methodName) {
         return this.paymentMethods[i].isSelected;
       }
@@ -55,7 +55,7 @@ export class OrderingComponent implements OnInit{
   order: Order;
   phone: string;
   pickUpAddresses: string[] = ['Ленина 32', 'Кунарская 15'];
-  pickUpValue = new FormControl();
+  pickUpValue: FormControl<any> = new FormControl();
 
   private _documentClick$: Observable<Event> = fromEvent(document, 'click');
   private _documentKeyDown$: Observable<Event> = fromEvent(document, 'keydown');
@@ -107,7 +107,14 @@ export class OrderingComponent implements OnInit{
     const clickSubscription: Subscription =
       context._documentClick$.subscribe((evt: Event): void => {
         const authRef: Element = document.querySelector('.modal-container')!;
-        if (!evt.composedPath().includes(authRef!)) {
+        const selectItems: NodeListOf<Element> = document.querySelectorAll('.pick-up-addresses');
+        let isSelectClick: boolean = false;
+        selectItems.forEach((el: Element): void => {
+          if (evt.composedPath().includes(el)) {
+            isSelectClick = true;
+          }
+        });
+        if (!evt.composedPath().includes(authRef!) && !isSelectClick) {
           context.closeModal();
         }
       });
@@ -125,12 +132,12 @@ export class OrderingComponent implements OnInit{
     context._subscriptions.push(keyDownSubscription);
   }
 
-  changePaymentMethod(event: Event) {
-    let target = event.target as HTMLInputElement;
+  changePaymentMethod(event: Event): void {
+    let target: HTMLInputElement = event.target as HTMLInputElement;
     this.paymentMethods.chooseMethod(target.id);
   }
 
-  changeDeliveryMethod() {
+  changeDeliveryMethod(): void {
     this.isDeliverySelected = !this.isDeliverySelected;
   }
 }
