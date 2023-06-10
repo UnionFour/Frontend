@@ -53,5 +53,4 @@ export class AuthService {
       map(x => x.data?.accessToken ?? "")
     );
   }
-
 }

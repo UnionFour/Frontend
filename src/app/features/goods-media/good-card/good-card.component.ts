@@ -1,6 +1,6 @@
-import { Input, Component } from '@angular/core';
+import {Input, Component, OnInit} from '@angular/core';
 import { SelectingProductsService } from "../../../core/services/selecting-products.service";
-import { Product } from "../../../../assets/classes/product";
+import { Product } from "../../../core/models/product";
 
 @Component({
   selector: 'good-card',
@@ -8,12 +8,12 @@ import { Product } from "../../../../assets/classes/product";
   styleUrls: ['./good-card.component.css']
 })
 export class GoodCardComponent {
-  constructor(private selectingProductsService: SelectingProductsService) {}
+  @Input() public product!: Product;
 
-  @Input()
-  product!: Product;
+  constructor (private selectingProductsService: SelectingProductsService) {
+  }
 
-  postponeGood() {
+  postponeGood(): void {
     this.selectingProductsService.addSelectedProduct(this.product);
   }
 }

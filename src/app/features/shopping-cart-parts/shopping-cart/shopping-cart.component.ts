@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SelectingProductsService } from "../../../core/services/selecting-products.service";
-import { DelayedProduct } from "../../../../assets/classes/delayed-product";
-import { Order } from "../../../../assets/classes/order";
+import { DelayedProduct } from "../../../core/models/delayed-product";
+import { Order } from "../../../core/models/order";
 import { OrderingService } from "../../../core/services/ordering.service";
 import {Router} from "@angular/router";
 

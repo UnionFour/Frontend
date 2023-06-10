@@ -1,6 +1,6 @@
 import {Component, ChangeDetectionStrategy, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {Order } from '../../../assets/classes/order';
+import {Order } from '../../core/models/order';
 import {OrderingService} from '../../core/services/ordering.service';
 import {Router} from '@angular/router';
 import {Observable, fromEvent, Subscription} from 'rxjs';

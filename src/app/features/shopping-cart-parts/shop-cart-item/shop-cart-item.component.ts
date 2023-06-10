@@ -1,5 +1,5 @@
 import { Input, Component, Output, EventEmitter } from '@angular/core';
-import { DelayedProduct } from "../../../../assets/classes/delayed-product";
+import { DelayedProduct } from "../../../core/models/delayed-product";
 
 @Component({
   selector: 'shop-cart-item',
