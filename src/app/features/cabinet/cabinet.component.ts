@@ -12,7 +12,7 @@ import {Router} from "@angular/router";
 })
 export class CabinetComponent {
 
-  phone: string;
+  public phone: string;
 
   constructor(private authService: AuthService, private router: Router) {
     this.phone = window.localStorage['phone'];
@@ -20,7 +20,7 @@ export class CabinetComponent {
 
   nameForm : FormGroup = new FormGroup({
     "userName": new FormControl(
-      "",
+      window.localStorage["name"],
       [
         Validators.required,
       ]),
@@ -28,7 +28,7 @@ export class CabinetComponent {
 
   emailForm : FormGroup = new FormGroup({
     "userEmail": new FormControl(
-      "",
+      window.localStorage["email"],
       [
         Validators.email,
         Validators.required,
@@ -38,15 +38,37 @@ export class CabinetComponent {
 
   birthdayForm : FormGroup = new FormGroup({
     "userBirthday": new FormControl(
-      new TuiDay(2000, 1, 1),
+      this.parseBirthDate(window.localStorage["birthday"]),
       [
         Validators.required,
       ]
     )
   });
 
-  signOut() {
+  public signOut(): void {
     this.authService.SignOut();
     this.router.navigateByUrl('').then();
+  }
+
+  public saveName(): void {
+    window.localStorage["name"] = this.nameForm.get("userName")?.value;
+  }
+
+  public saveEmail(): void {
+    window.localStorage["email"] = this.emailForm.get("userEmail")?.value;
+  }
+
+  public saveBirthday(): void {
+    window.localStorage["birthday"] = this.birthdayForm.get("userBirthday")?.value;
+  }
+
+  public parseBirthDate(stringDate: string | undefined): TuiDay {
+    if (!stringDate || stringDate.length !== 10) {
+      return new TuiDay(2000, 1, 1);
+    }
+    const day: number = Number.parseInt(stringDate.slice(0, 2));
+    const month: number = Number.parseInt(stringDate.slice(3, 5));
+    const year: number = Number.parseInt(stringDate.slice(6, 10));
+    return new TuiDay(year, month - 1, day);
   }
 }
