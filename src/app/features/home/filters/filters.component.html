@@ -2,8 +2,8 @@
   <div class="filter-container">
     <p>Фильтр</p>
     <ng-container *ngFor="let filter of filters">
-      <div class="filter-button">
-        <div class="filter-button-name">{{filter}}</div>
+      <div class="filter-button" (click)="filterGoods($event)" [class.chosen]="filter.isChosen">
+        <div class="filter-button-name">{{filter.filterValue}}</div>
       </div>
     </ng-container>
   </div>

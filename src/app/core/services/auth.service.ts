@@ -1,7 +1,7 @@
 import {Injectable } from '@angular/core';
 import {Apollo, gql} from 'apollo-angular'
 import {AuthPayload, TokenInput} from 'src/gql/graphql';
-import {map, Observable, Subject} from "rxjs";
+import {map, Observable, Subject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'

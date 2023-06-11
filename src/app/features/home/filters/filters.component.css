@@ -138,11 +138,23 @@ p {
 }
 
 .filter-button:hover {
-  background: #E7DEE1;
+  background: #f3ecec;
 }
 
 .filter-button:active {
   background: #C5BABE;
+}
+
+.chosen {
+  background: #E7DEE1;
+}
+
+.chosen:hover {
+  background: #e0d5d7;
+}
+
+.chosen:active {
+  background: #c2b6bb;
 }
 
 .sort-button {
