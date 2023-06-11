@@ -7,14 +7,14 @@
       <app-shopping-cart></app-shopping-cart>
       <app-promocode-field></app-promocode-field>
     </div>
-    <app-goods-section *ngIf="categories[0]" [sectionName]="categories[0].name" [products]="categories[0].products">
+    <app-goods-section *ngIf="tempCategories[0]" [sectionName]="tempCategories[0].name" [products]="tempCategories[0].products">
     </app-goods-section>
     <div class="promo-cart-container">
       <app-shopping-cart></app-shopping-cart>
       <app-promocode-field></app-promocode-field>
     </div>
-    <ng-container *ngIf="categories.length > 1">
-      <ng-container *ngFor="let category of categories.slice(1)">
+    <ng-container *ngIf="tempCategories.length > 1">
+      <ng-container *ngFor="let category of tempCategories.slice(1)">
         <app-goods-section [sectionName]="category.name" [products]="category.products"></app-goods-section>
       </ng-container>
     </ng-container>
