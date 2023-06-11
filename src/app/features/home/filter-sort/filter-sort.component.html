@@ -7,5 +7,8 @@
       </div>
     </ng-container>
   </div>
-  <img class="sort-button" alt="sort" src="../../../../assets/img/sort_button.svg" width="34px" height="23px">
+  <button class="sort-button" (click)="toggleOpennessAuthComponent()"></button>
+  <div class="sort-component">
+    <ng-template componentsHost></ng-template>
+  </div>
 </div>

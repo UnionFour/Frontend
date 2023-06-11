@@ -15,7 +15,8 @@ export class HomeComponent implements OnDestroy{
   public tempCategories: ProductCategory[] = [];
   private _categories: ProductCategory[] = [];
   private _subs: Subscription[] = [];
-  public _activeFilters: string[] = [];
+  private _activeFilters: string[] = [];
+  private _activateSort: {isReverse: boolean, sortCriteria: string} | undefined;
 
   constructor(private readonly _loadingProductsService: LoadingProductsService,
               private readonly _filterSortService: FilterSortService) {
@@ -66,18 +67,24 @@ export class HomeComponent implements OnDestroy{
   }
 
   public sortGoods(isReverse: boolean = false, sortCriteria: string = 'price'): void {
-    this.tempCategories.map((category: ProductCategory): void => {
-      category.products.sort((a: Product, b: Product): number => {
-        const aMap: Map<string, any> = new Map(Object.entries(a));
-        const bMap: Map<string, any> = new Map(Object.entries(b));
-        if (aMap.get(sortCriteria) < bMap.get(sortCriteria)) {
-          return isReverse ? 1 : -1;
-        } else if (aMap.get(sortCriteria) > bMap.get(sortCriteria)) {
-          return isReverse? -1 : 1;
-        }
-        return 0;
+    if (this._activateSort?.sortCriteria === sortCriteria && this._activateSort?.isReverse === isReverse) {
+      this._activateSort = undefined;
+      this.resetTempData();
+    } else {
+      this._activateSort = {isReverse: isReverse, sortCriteria: sortCriteria};
+      this.tempCategories.map((category: ProductCategory): void => {
+        category.products.sort((a: Product, b: Product): number => {
+          const aMap: Map<string, any> = new Map(Object.entries(a));
+          const bMap: Map<string, any> = new Map(Object.entries(b));
+          if (aMap.get(sortCriteria) < bMap.get(sortCriteria)) {
+            return isReverse ? 1 : -1;
+          } else if (aMap.get(sortCriteria) > bMap.get(sortCriteria)) {
+            return isReverse? -1 : 1;
+          }
+          return 0;
+        });
       });
-    });
+    }
   }
 
   public ingredientFilterGoods(filterValue: string): void {

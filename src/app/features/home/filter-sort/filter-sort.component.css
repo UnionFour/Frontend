@@ -160,4 +160,25 @@ p {
 .sort-button {
   cursor: pointer;
   align-self: start;
+  width: 34px;
+  height: 23px;
+  border: none;
+  background: url("src/assets/img/sort_button.svg") no-repeat;
+  background-size: 34px 23px;
+}
+
+.sort-button:hover {
+  background: url("src/assets/img/sort_button_hover.svg") no-repeat;
+  background-size: 34px 23px;
+}
+
+.sort-button:active {
+  background: url("src/assets/img/sort_button_active.svg") no-repeat;
+  background-size: 34px 23px;
+}
+
+.sort-component {
+  position: relative;
+  top: 50px;
+  right: 194px;
 }

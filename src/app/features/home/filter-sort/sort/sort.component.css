@@ -1,0 +1,47 @@
+.sort-container {
+  position: absolute;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  z-index: 9999;
+  box-shadow: 0 4px 22px -6px rgba(0, 0, 0, 0.2);
+  width: 194px;
+  height: 82px;
+}
+
+.sort-container button {
+  font-family: 'Inter', serif;
+  font-style: normal;
+  font-weight: 600;
+  width: 194px;
+  height: 41px;
+  border: none;
+  background-color: #FFFFFF;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.sort-container button:hover {
+  color: #43AA72;
+  background-color: #FEFEFE;
+}
+
+.sort-container button:active {
+  color: #2A8955;
+  background-color: #FCFCFC;
+}
+
+.sort-container button:first-child {
+  border-radius: 12px 12px 0 0;
+  padding: 8px 5px 0 5px;
+}
+
+.sort-container button:last-child {
+  border-radius: 0 0 12px 12px;
+  padding: 0 5px 8px 5px;
+}
+
+.sort-container .chosen {
+  color: #43AA72;
+  background-color: #FEFEFE;
+}

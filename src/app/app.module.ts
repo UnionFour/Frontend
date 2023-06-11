@@ -25,7 +25,7 @@ import {
   TuiPaginationModule, TuiSelectModule
 } from "@taiga-ui/kit";
 import {LastOrdersComponent} from './features/home/last-orders/last-orders.component';
-import {FiltersComponent} from './features/home/filters/filters.component';
+import {FilterSortComponent} from './features/home/filter-sort/filter-sort.component';
 import {GoodsSectionComponent} from './features/goods-media/goods-section/goods-section.component';
 import {FooterComponent} from './shared/footer/footer.component';
 import {ShoppingCartComponent} from './features/shopping-cart-parts/shopping-cart/shopping-cart.component';
@@ -44,6 +44,8 @@ import {NgxMaskDirective, NgxMaskPipe, provideNgxMask} from "ngx-mask";
 import {AppRoutingModule} from "./app-routing.module";
 import {GameComponent} from "./features/game/game.component";
 import {AboutUsComponent} from "./features/about-us/about-us.component";
+import {ComponentHostDirective} from "./shared/directives/component-host.directive";
+import {SortComponent} from "./features/home/filter-sort/sort/sort.component";
 
 @NgModule({
   declarations: [
@@ -52,7 +54,7 @@ import {AboutUsComponent} from "./features/about-us/about-us.component";
     NavigationComponent,
     PromotionsComponent,
     LastOrdersComponent,
-    FiltersComponent,
+    FilterSortComponent,
     GoodsSectionComponent,
     FooterComponent,
     ShoppingCartComponent,
@@ -64,7 +66,9 @@ import {AboutUsComponent} from "./features/about-us/about-us.component";
     OrderingComponent,
     LoginComponent,
     GameComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    ComponentHostDirective,
+    SortComponent
   ],
   imports: [
     AppRoutingModule,
