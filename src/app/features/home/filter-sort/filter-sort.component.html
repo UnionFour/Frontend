@@ -7,7 +7,12 @@
       </div>
     </ng-container>
   </div>
-  <button class="sort-button" (click)="toggleOpennessAuthComponent()"></button>
+  <button
+    class="sort-button"
+    (click)="toggleOpennessAuthComponent()"
+    [class.open-sort]="isOpenSort"
+  >
+  </button>
   <div class="sort-component">
     <ng-template componentsHost></ng-template>
   </div>

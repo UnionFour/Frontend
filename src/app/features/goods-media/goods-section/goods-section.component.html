@@ -4,5 +4,6 @@
     <div *ngFor="let product of products">
       <good-card [product]="product"></good-card>
     </div>
+    <h2 *ngIf="isEmpty">По вашему запросу ничего не нашлось</h2>
   </div>
 </div>

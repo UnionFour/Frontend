@@ -1,6 +1,5 @@
 @media (min-width: 1336px) {
   .goods-container {
-    /*margin: 0 0 68px 0;*/
     width: calc(100% - 374px);
   }
 }
@@ -51,4 +50,10 @@ h1 {
   font-size: 30px;
   line-height: 36px;
   margin: 0 0 0 34px;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 20px;
+  margin: 100px 0 150px 20px;
 }

@@ -69,7 +69,9 @@ export class HomeComponent implements OnDestroy{
   public sortGoods(isReverse: boolean = false, sortCriteria: string = 'price'): void {
     if (this._activateSort?.sortCriteria === sortCriteria && this._activateSort?.isReverse === isReverse) {
       this._activateSort = undefined;
+      const tempActiveFilters: string[] = this._activeFilters.slice();
       this.resetTempData();
+      tempActiveFilters.forEach((activeFilter: string): void => {this.ingredientFilterGoods(activeFilter);});
     } else {
       this._activateSort = {isReverse: isReverse, sortCriteria: sortCriteria};
       this.tempCategories.map((category: ProductCategory): void => {
@@ -92,9 +94,8 @@ export class HomeComponent implements OnDestroy{
       this._activeFilters = this._activeFilters.filter((activeFilter: string): boolean => {
         return activeFilter !== filterValue;
       });
+      const tempActiveFilters: string[] = this._activeFilters.slice();
       this.resetTempData();
-      const tempActiveFilters: string[] = this._activeFilters;
-      this._activeFilters = [];
       tempActiveFilters.forEach((activeFilter: string): void => {this.ingredientFilterGoods(activeFilter);});
     } else {
       this.tempCategories.map((category: ProductCategory): void => {
@@ -109,6 +110,7 @@ export class HomeComponent implements OnDestroy{
   }
 
   public resetTempData(): void {
+    this._activeFilters = [];
     this.tempCategories = this.cloneCategories(this._categories);
   }
 

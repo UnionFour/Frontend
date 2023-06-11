@@ -182,3 +182,18 @@ p {
   top: 50px;
   right: 194px;
 }
+
+.open-sort {
+  background: url("src/assets/img/sort_button_hover.svg") no-repeat;
+  background-size: 34px 23px;
+}
+
+.open-sort:hover {
+  background: url("src/assets/img/sort_button_active.svg") no-repeat;
+  background-size: 34px 23px;
+}
+
+.open-sort:active {
+  background: url("src/assets/img/sort_button_hover.svg") no-repeat;
+  background-size: 34px 23px;
+}
