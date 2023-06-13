@@ -46,7 +46,7 @@ export class CabinetComponent {
   });
 
   public signOut(): void {
-    this.authService.SignOut();
+    this.authService.signOut();
     this.router.navigateByUrl('').then();
   }
 

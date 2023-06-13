@@ -55,6 +55,7 @@ export class HomeComponent implements OnDestroy{
           return Object.assign({}, ingredient);
         });
         return new Product(
+          product.productId,
           product.name,
           product.description,
           product.category,

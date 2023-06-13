@@ -7,13 +7,12 @@ import { Order } from 'src/app/core/models/order'
 @Injectable({
   providedIn: 'root',
 })
-
 export class SelectingProductsService {
   public changedProduct$: Subject<Product> = new Subject<Product>();
-  public selectedProducts = new Map<string, Product>();
+  public selectedProducts: Map<string, Product> = new Map<string, Product>();
   public order: Order | undefined;
 
-  public addSelectedProduct(newProduct: Product) {
+  public addSelectedProduct(newProduct: Product): void {
     this.changedProduct$.next(newProduct);
     this.selectedProducts.set(newProduct.name, newProduct);
 
@@ -24,7 +23,7 @@ export class SelectingProductsService {
     }
   }
 
-  public removeSelectedProduct(removableProduct: Product) {
+  public removeSelectedProduct(removableProduct: Product): void {
     if (this.selectedProducts.has(removableProduct.name)) {
       this.selectedProducts.delete(removableProduct.name);
       this.changedProduct$.next(removableProduct);

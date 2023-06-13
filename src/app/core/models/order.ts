@@ -10,9 +10,9 @@ export class Order{
     this.orderSum = this.getOrderSum();
   }
 
-  append(product: DelayedProduct) {
+  public append(product: DelayedProduct): void {
     if (this.productNames.has(product.name)) {
-      let changedProduct = this.productNames.get(product.name);
+      let changedProduct: DelayedProduct | undefined = this.productNames.get(product.name);
       changedProduct!.plusCount(product.count);
     } else {
       this.productNames.set(product.name, product);
@@ -20,7 +20,7 @@ export class Order{
     this.orderSum = this.getOrderSum();
   }
 
-  getOrderSum() {
+  public getOrderSum(): number {
     let sum: number = 0;
     for (let product of this.productNames.values()) {
       sum += product.totalAmount;
@@ -28,7 +28,7 @@ export class Order{
     return sum;
   }
 
-  removeProduct(productName: string) {
+  public removeProduct(productName: string): void {
     if (this.productNames.has(productName)) {
       this.productNames.delete(productName);
     }

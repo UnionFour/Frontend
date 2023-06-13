@@ -29,29 +29,30 @@ export class LoginComponent implements OnInit, OnDestroy {
               private router: Router) {
   }
 
-  ngOnInit() {
+  public ngOnInit(): void {
     this.codeSubscription = this.code.valueChanges.subscribe(() => {
       if (this.code.valid) {
-        this.authService.GetAccessToken({
+        this.authService.getAccessToken({
           encryptedCode: this.encryptedCode,
           phone: this.phone.value,
           smsCode: this.code.value
-        }).subscribe((jwt: string) => {
+        }).subscribe((jwt: string): void => {
           window.localStorage["jwt"] = jwt;
-          this.authService.SignIn();
+          this.authService.parseJwt();
+          this.authService.signIn();
           this.context.completeWith(true);
         });
       }
     })
   }
 
-  ngOnDestroy() {
+  public ngOnDestroy(): void {
     this.codeSubscription.unsubscribe();
   }
 
   public sendSmsCode(): void {
     if (this.phone.valid) {
-      this.authService.SendSmsCode(this.phone.value).subscribe((authPayload: AuthPayload): void => {
+      this.authService.sendSmsCode(this.phone.value).subscribe((authPayload: AuthPayload): void => {
         this.smsCodeSent = true;
         this.encryptedCode = authPayload.encryptedCode;
       });

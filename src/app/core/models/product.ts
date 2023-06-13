@@ -1,6 +1,7 @@
 import {Ingredient} from './ingredient';
 
 export class Product {
+  public productId: string;
   public name: string;
   public description: string;
   public picture: string;
@@ -8,8 +9,9 @@ export class Product {
   public price: number;
   public ingredients: Ingredient[];
 
-  constructor(name: string = '', description: string = '', category: string = '', price: number = 300,
-              imgPath: string = "assets/img/pizza_example.png", ingredients: Ingredient[] = []) {
+  constructor(productId: string = '0', name: string = '', description: string = '', category: string = '',
+              price: number = 300, imgPath: string = "assets/img/pizza_example.png", ingredients: Ingredient[] = []) {
+    this.productId = productId;
     this.name = name;
     this.description = description;
     this.category = category;

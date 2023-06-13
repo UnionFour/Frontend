@@ -30,6 +30,7 @@ export class LoadingProductsService {
             picture
             price
             category
+            productId
             ingredients {
               name
             }
@@ -48,6 +49,7 @@ export class LoadingProductsService {
   private parseProducts(): void {
     this.products = this.products!.map((product: Product) => {
       return new Product(
+        product.productId,
         product.name,
         product.description,
         product.category,
