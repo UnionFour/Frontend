@@ -13,7 +13,9 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel or swc plugin for production.
  */
 const documents = {
-    "\n        mutation SendSmsCode {\n          sendSmsCode(phone: \"79991232323\") {\n            timeSpan\n            expiry\n            encryptedCode\n          }\n        }\n      ": types.SendSmsCodeDocument,
+    "\n        mutation SendSmsCode($phone: String!) {\n          sendSmsCode(phone: $phone) {\n            timeSpan\n            expiry\n            encryptedCode\n          }\n        }\n      ": types.SendSmsCodeDocument,
+    "\n        mutation GetAccessToken($input: TokenInput!) {\n          accessToken(input: $input)\n        }\n      ": types.GetAccessTokenDocument,
+    "\n        query GetProducts {\n          products {\n            name\n            description\n            picture\n            price\n            category\n            ingredients {\n              name\n            }\n          }\n        }\n      ": types.GetProductsDocument,
 };
 
 /**
@@ -33,7 +35,15 @@ export function graphql(source: string): unknown;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n        mutation SendSmsCode {\n          sendSmsCode(phone: \"79991232323\") {\n            timeSpan\n            expiry\n            encryptedCode\n          }\n        }\n      "): (typeof documents)["\n        mutation SendSmsCode {\n          sendSmsCode(phone: \"79991232323\") {\n            timeSpan\n            expiry\n            encryptedCode\n          }\n        }\n      "];
+export function graphql(source: "\n        mutation SendSmsCode($phone: String!) {\n          sendSmsCode(phone: $phone) {\n            timeSpan\n            expiry\n            encryptedCode\n          }\n        }\n      "): (typeof documents)["\n        mutation SendSmsCode($phone: String!) {\n          sendSmsCode(phone: $phone) {\n            timeSpan\n            expiry\n            encryptedCode\n          }\n        }\n      "];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "\n        mutation GetAccessToken($input: TokenInput!) {\n          accessToken(input: $input)\n        }\n      "): (typeof documents)["\n        mutation GetAccessToken($input: TokenInput!) {\n          accessToken(input: $input)\n        }\n      "];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "\n        query GetProducts {\n          products {\n            name\n            description\n            picture\n            price\n            category\n            ingredients {\n              name\n            }\n          }\n        }\n      "): (typeof documents)["\n        query GetProducts {\n          products {\n            name\n            description\n            picture\n            price\n            category\n            ingredients {\n              name\n            }\n          }\n        }\n      "];
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {};
