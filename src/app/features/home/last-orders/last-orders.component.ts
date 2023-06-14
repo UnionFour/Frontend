@@ -1,5 +1,14 @@
 import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {AuthService} from "../../../core/services/auth.service";
+import {LastOrdersLoadingService} from "../../../core/services/last-orders-loading.service";
+import {SelectingProductsService} from "../../../core/services/selecting-products.service";
+
+type LastProducts = {
+  productId: string,
+  name: string,
+  price: number,
+  picture: string
+}[];
 
 @Component({
   selector: 'app-last-orders',
@@ -9,23 +18,20 @@ import {AuthService} from "../../../core/services/auth.service";
 })
 export class LastOrdersComponent implements OnInit{
 
-  public isAuthorized: boolean;
-
+  public showLastOrder: boolean = false;
+  public lastProducts: LastProducts = [];
   public index: number = 0;
   public itemsCount: number = 4;
 
-  readonly items = [
-    {title: 'Пепперони', content: 'от 299 ₽', imgSrc: 'assets/img/last_orders_picture1.png'},
-    {title: 'Пепперони', content: 'от 299 ₽', imgSrc: 'assets/img/last_orders_picture1.png'},
-    {title: 'Пепперони', content: 'от 299 ₽', imgSrc: 'assets/img/last_orders_picture1.png'},
-    {title: 'Пепперони', content: 'от 299 ₽', imgSrc: 'assets/img/last_orders_picture1.png'},
-    {title: 'Пепперони', content: 'от 299 ₽', imgSrc: 'assets/img/last_orders_picture1.png'},
-    {title: 'Пепперони', content: 'от 299 ₽', imgSrc: 'assets/img/last_orders_picture1.png'},
-    {title: 'Пепперони', content: 'от 299 ₽', imgSrc: 'assets/img/last_orders_picture1.png'},
-  ];
-
-  constructor(private readonly _authService: AuthService, public changeRef: ChangeDetectorRef) {
-    this.isAuthorized = !!window.localStorage['jwt'];
+  constructor(private readonly _authService: AuthService,
+              public changeRef: ChangeDetectorRef,
+              private readonly _lastOrdersLoadingService: LastOrdersLoadingService,
+              private readonly _selectingProductsService: SelectingProductsService) {
+    this._lastOrdersLoadingService.lastProducts$.subscribe((lastProducts: LastProducts): void => {
+      this.lastProducts = lastProducts;
+      this.showLastOrder = (!!window.localStorage['jwt'] && this.lastProducts.length > 0);
+      this.changeRef.markForCheck();
+    });
     if (window.innerWidth < 1190 && window.innerWidth >= 800) {
       this.itemsCount = 3;
       this.changeRef.markForCheck();
@@ -38,7 +44,7 @@ export class LastOrdersComponent implements OnInit{
   public ngOnInit(): void {
     const context: LastOrdersComponent = this;
     this._authService.authorization$.subscribe((isAuthorized: boolean): void => {
-      context.isAuthorized = isAuthorized;
+      context.showLastOrder = (isAuthorized && this.lastProducts.length > 0);
       context.changeRef.markForCheck();
     });
     window.onresize = function (): void {
@@ -61,5 +67,9 @@ export class LastOrdersComponent implements OnInit{
 
   onIndex(index: number): void {
     this.index = index * this.itemsCount;
+  }
+
+  public appendProduct(product: any): void {
+    console.log(product);
   }
 }
