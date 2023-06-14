@@ -14,8 +14,11 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  */
 const documents = {
     "\n        mutation SendSmsCode($phone: String!) {\n          sendSmsCode(phone: $phone) {\n            timeSpan\n            expiry\n            encryptedCode\n          }\n        }\n      ": types.SendSmsCodeDocument,
+    "\n        mutation UpdateUser($input: UpdateUserDTOInput!){\n          updateUser(updateUserDto: $input) {\n            userid\n            name\n            birth\n            email\n          }\n        }\n      ": types.UpdateUserDocument,
     "\n        mutation GetAccessToken($input: TokenInput!) {\n          accessToken(input: $input)\n        }\n      ": types.GetAccessTokenDocument,
-    "\n        query GetProducts {\n          products {\n            name\n            description\n            picture\n            price\n            category\n            ingredients {\n              name\n            }\n          }\n        }\n      ": types.GetProductsDocument,
+    "\n        query GetLastProducts($input: UUID!) {\n          userLastOrder(userId: $input) {\n            name\n            description\n            picture\n            price\n            category\n            productId\n            ingredients {\n              name\n            }\n          }\n        }\n      ": types.GetLastProductsDocument,
+    "\n        query GetProducts {\n          products {\n            name\n            description\n            picture\n            price\n            category\n            productId\n            ingredients {\n              name\n            }\n          }\n        }\n      ": types.GetProductsDocument,
+    "\n        mutation CreateOrder($input: OrderDTOInput!) {\n          createOrder(orderDto: $input) {\n            userid\n            extradition\n            address\n            cost\n            products {\n              productId\n            }\n          }\n        }\n      ": types.CreateOrderDocument,
 };
 
 /**
@@ -39,11 +42,23 @@ export function graphql(source: "\n        mutation SendSmsCode($phone: String!)
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
+export function graphql(source: "\n        mutation UpdateUser($input: UpdateUserDTOInput!){\n          updateUser(updateUserDto: $input) {\n            userid\n            name\n            birth\n            email\n          }\n        }\n      "): (typeof documents)["\n        mutation UpdateUser($input: UpdateUserDTOInput!){\n          updateUser(updateUserDto: $input) {\n            userid\n            name\n            birth\n            email\n          }\n        }\n      "];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
 export function graphql(source: "\n        mutation GetAccessToken($input: TokenInput!) {\n          accessToken(input: $input)\n        }\n      "): (typeof documents)["\n        mutation GetAccessToken($input: TokenInput!) {\n          accessToken(input: $input)\n        }\n      "];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n        query GetProducts {\n          products {\n            name\n            description\n            picture\n            price\n            category\n            ingredients {\n              name\n            }\n          }\n        }\n      "): (typeof documents)["\n        query GetProducts {\n          products {\n            name\n            description\n            picture\n            price\n            category\n            ingredients {\n              name\n            }\n          }\n        }\n      "];
+export function graphql(source: "\n        query GetLastProducts($input: UUID!) {\n          userLastOrder(userId: $input) {\n            name\n            description\n            picture\n            price\n            category\n            productId\n            ingredients {\n              name\n            }\n          }\n        }\n      "): (typeof documents)["\n        query GetLastProducts($input: UUID!) {\n          userLastOrder(userId: $input) {\n            name\n            description\n            picture\n            price\n            category\n            productId\n            ingredients {\n              name\n            }\n          }\n        }\n      "];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "\n        query GetProducts {\n          products {\n            name\n            description\n            picture\n            price\n            category\n            productId\n            ingredients {\n              name\n            }\n          }\n        }\n      "): (typeof documents)["\n        query GetProducts {\n          products {\n            name\n            description\n            picture\n            price\n            category\n            productId\n            ingredients {\n              name\n            }\n          }\n        }\n      "];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "\n        mutation CreateOrder($input: OrderDTOInput!) {\n          createOrder(orderDto: $input) {\n            userid\n            extradition\n            address\n            cost\n            products {\n              productId\n            }\n          }\n        }\n      "): (typeof documents)["\n        mutation CreateOrder($input: OrderDTOInput!) {\n          createOrder(orderDto: $input) {\n            userid\n            extradition\n            address\n            cost\n            products {\n              productId\n            }\n          }\n        }\n      "];
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {};

@@ -16,6 +16,19 @@ export class CabinetComponent {
 
   constructor(private authService: AuthService, private router: Router) {
     this.phone = window.localStorage['phone'];
+    authService.getMe().subscribe(user => {
+      if (user === undefined)
+        return;
+
+      window.localStorage["name"] = user.name;
+      this.nameForm.setValue({userName: user.name});
+
+      window.localStorage["birthday"] = user.birth;
+      this.birthdayForm.setValue({userBirthday: this.parseBirthDate(user.birth)});
+
+      window.localStorage["email"] = user.email;
+      this.emailForm.setValue({userEmail: user.email});
+    })
   }
 
   nameForm : FormGroup = new FormGroup({
@@ -51,14 +64,33 @@ export class CabinetComponent {
   }
 
   public saveName(): void {
+
+    this.authService.updateUser({
+      name: this.nameForm.get("userName")?.value,
+      birth: null,
+      email: null
+    }).subscribe()
+
     window.localStorage["name"] = this.nameForm.get("userName")?.value;
   }
 
   public saveEmail(): void {
+    this.authService.updateUser({
+      name: null,
+      birth: null,
+      email: this.emailForm.get("userEmail")?.value
+    }).subscribe()
+
     window.localStorage["email"] = this.emailForm.get("userEmail")?.value;
   }
 
   public saveBirthday(): void {
+    this.authService.updateUser({
+      name: null,
+      birth: this.birthdayForm.get("userBirthday")?.value,
+      email: null
+    }).subscribe()
+
     window.localStorage["birthday"] = this.birthdayForm.get("userBirthday")?.value;
   }
 
@@ -66,9 +98,7 @@ export class CabinetComponent {
     if (!stringDate || stringDate.length !== 10) {
       return new TuiDay(2000, 1, 1);
     }
-    const day: number = Number.parseInt(stringDate.slice(0, 2));
-    const month: number = Number.parseInt(stringDate.slice(3, 5));
-    const year: number = Number.parseInt(stringDate.slice(6, 10));
-    return new TuiDay(year, month - 1, day);
+    let date = new Date(stringDate);
+    return new TuiDay(date.getFullYear(), date.getMonth(), date.getDate());
   }
 }
