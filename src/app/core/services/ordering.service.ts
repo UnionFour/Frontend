@@ -46,7 +46,9 @@ export class OrderingService {
             extradition
             address
             cost
-            products
+            products {
+              productId
+            }
           }
         }
       `,
