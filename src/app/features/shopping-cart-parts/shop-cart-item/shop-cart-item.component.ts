@@ -14,12 +14,12 @@ export class ShopCartItemComponent {
   @Output() onRemove = new EventEmitter<DelayedProduct>();
 
   plusOne() {
-    this.product.plusCount(1);
+    this.product.plusAmount(1);
     this.onPlusOne.emit(this.product);
   }
 
   minusOne() {
-    this.product.minusCount(1);
+    this.product.minusAmount(1);
     this.onMinusOne.emit(this.product);
   }
 

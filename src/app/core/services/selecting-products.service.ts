@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Product } from 'src/app/core/models/product'
 import { DelayedProduct } from "../models/delayed-product";
-import { Order } from 'src/app/core/models/order'
+import { UserOrder } from 'src/app/core/models/user-order'
 
 @Injectable({
   providedIn: 'root',
@@ -10,14 +10,14 @@ import { Order } from 'src/app/core/models/order'
 export class SelectingProductsService {
   public changedProduct$: Subject<Product> = new Subject<Product>();
   public selectedProducts: Map<string, Product> = new Map<string, Product>();
-  public order: Order | undefined;
+  public order: UserOrder | undefined;
 
   public addSelectedProduct(newProduct: Product): void {
     this.changedProduct$.next(newProduct);
     this.selectedProducts.set(newProduct.name, newProduct);
 
     if (!this.order) {
-      this.order = new Order(new DelayedProduct(newProduct));
+      this.order = new UserOrder(new DelayedProduct(newProduct));
     } else {
       this.order.append(new DelayedProduct(newProduct));
     }

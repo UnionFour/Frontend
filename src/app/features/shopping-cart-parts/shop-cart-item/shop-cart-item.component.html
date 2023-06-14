@@ -6,9 +6,9 @@
     <p class="description" title="{{product.description}}">{{product.getShortDescription(18, '..')}}</p>
     <div class="count-control">
       <button class="minus" (click)="minusOne()">-</button>
-      <p class="count">{{product.count}}</p>
+      <p class="count">{{product.amount}}</p>
       <button class="plus" (click)="plusOne()">+</button>
-      <p class="this-products-price">{{product.totalAmount}}₽</p>
+      <p class="this-products-price">{{product.totalCost}}₽</p>
     </div>
   </div>
 </div>

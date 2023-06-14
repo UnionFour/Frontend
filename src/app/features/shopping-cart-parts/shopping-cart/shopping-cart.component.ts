@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SelectingProductsService } from "../../../core/services/selecting-products.service";
 import { DelayedProduct } from "../../../core/models/delayed-product";
-import { Order } from "../../../core/models/order";
+import { UserOrder } from "../../../core/models/user-order";
 import { OrderingService } from "../../../core/services/ordering.service";
 import {Router} from "@angular/router";
 
@@ -12,7 +12,7 @@ import {Router} from "@angular/router";
 
 })
 export class ShoppingCartComponent implements OnInit {
-  order!: Order;
+  order!: UserOrder;
   renderingProducts: Array<DelayedProduct> = new Array<DelayedProduct>();
 
   constructor(private selectingProductsService: SelectingProductsService,
@@ -23,7 +23,7 @@ export class ShoppingCartComponent implements OnInit {
     this.selectingProductsService.changedProduct$.subscribe(
       (changedProduct) => {
         if (!this.order) {
-          this.order = new Order(new DelayedProduct(changedProduct));
+          this.order = new UserOrder(new DelayedProduct(changedProduct));
         } else {
           this.order.append(new DelayedProduct(changedProduct));
         }

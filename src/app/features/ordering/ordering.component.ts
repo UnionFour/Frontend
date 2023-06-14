@@ -1,9 +1,10 @@
 import {Component, ChangeDetectionStrategy, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {Order } from '../../core/models/order';
+import {UserOrder } from '../../core/models/user-order';
 import {OrderingService} from '../../core/services/ordering.service';
 import {Router} from '@angular/router';
 import {Observable, fromEvent, Subscription} from 'rxjs';
+import {OrderExtradition} from "../../../gql/graphql";
 
 class PaymentMethod{
   name: string;
@@ -52,10 +53,10 @@ export class OrderingComponent implements OnInit{
     new PaymentMethod('sberPay', false)
   );
   isDeliverySelected: boolean = true;
-  order: Order;
+  order: UserOrder;
   phone: string;
   pickUpAddresses: string[] = ['Ленина 32', 'Кунарская 15'];
-  pickUpValue: FormControl<any> = new FormControl();
+  pickUpValue: FormControl<any> = new FormControl("", [Validators.required]);
 
   private _documentClick$: Observable<Event> = fromEvent(document, 'click');
   private _documentKeyDown$: Observable<Event> = fromEvent(document, 'keydown');
@@ -85,8 +86,8 @@ export class OrderingComponent implements OnInit{
     }
   );
 
-  constructor(private orderingService: OrderingService, private router: Router) {
-    this.order = orderingService.order!;
+  constructor(private _orderingService: OrderingService, private _router: Router) {
+    this.order = _orderingService.order!;
     this.phone = window.localStorage['phone'];
   }
 
@@ -96,11 +97,12 @@ export class OrderingComponent implements OnInit{
       context.clickOutsideSubscribe(context);
       context.keyDownSubscribe(context);
     }, 100);
+    this.order.userid = window.localStorage["userId"];
   }
 
   public closeModal(): void {
     this._subscriptions.forEach((subscription: Subscription) => subscription.unsubscribe());
-    this.router.navigateByUrl('').then();
+    this._router.navigateByUrl('').then();
   }
 
   public clickOutsideSubscribe(context: OrderingComponent): void {
@@ -132,12 +134,39 @@ export class OrderingComponent implements OnInit{
     context._subscriptions.push(keyDownSubscription);
   }
 
-  changePaymentMethod(event: Event): void {
+  public changePaymentMethod(event: Event): void {
     let target: HTMLInputElement = event.target as HTMLInputElement;
     this.paymentMethods.chooseMethod(target.id);
   }
 
-  changeDeliveryMethod(): void {
+  public changeDeliveryMethod(): void {
     this.isDeliverySelected = !this.isDeliverySelected;
+  }
+
+  public saveAddress(): void {
+    if (this.isDeliverySelected) {
+      let addressValues: string[] = [
+        "Улица: " + this.addressFormGroup.controls["street"].value,
+        "Номер дома: " + this.addressFormGroup.controls["houseNumber"].value,
+        this.addressFormGroup.controls["entrance"].value ?
+          "Подъезд: " + this.addressFormGroup.controls["entrance"].value : "",
+        this.addressFormGroup.controls["apartment"].value ?
+          "Квартира: " + this.addressFormGroup.controls["apartment"].value : "",
+        this.addressFormGroup.controls["floor"].value ?
+          "Этаж: " + this.addressFormGroup.controls["floor"].value : "",
+        this.addressFormGroup.controls["doorCode"].value ?
+          "Код от двери: " + this.addressFormGroup.controls["doorCode"].value : "",
+      ]
+      this.order.address = addressValues.filter((value: string): boolean => value.length > 0).join('; ');
+    } else {
+      this.order.address = this.pickUpValue.value;
+    }
+  }
+
+  public sendOrder(): void {
+    this.order.extradition = this.isDeliverySelected ? OrderExtradition.Delivery : OrderExtradition.PickUp;
+    this.saveAddress();
+    this._orderingService.sendOrder();
+    this.closeModal();
   }
 }

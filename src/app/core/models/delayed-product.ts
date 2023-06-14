@@ -1,24 +1,24 @@
 import { Product } from "./product";
 
 export class DelayedProduct extends Product{
-  count: number;
-  totalAmount: number;
+  amount: number;
+  totalCost: number;
 
   constructor(product: Product, count: number = 1) {
     super(product.productId, product.name, product.description, product.category, product.price, product.picture);
-    this.count = count;
-    this.totalAmount = product.price;
+    this.amount = count;
+    this.totalCost = product.price;
   }
 
-  plusCount(count: number = 1) {
-    this.count += count;
-    this.totalAmount += this.price * count;
+  plusAmount(count: number = 1): void {
+    this.amount += count;
+    this.totalCost += this.price * count;
   }
 
-  minusCount(count: number = 1) {
-    if (this.count > count) {
-      this.count -= count;
-      this.totalAmount -= this.price * count;
+  minusAmount(count: number = 1): void {
+    if (this.amount > count) {
+      this.amount -= count;
+      this.totalCost -= this.price * count;
     }
   }
 }

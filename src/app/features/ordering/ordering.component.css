@@ -242,6 +242,12 @@ input:-ms-input-placeholder { /* WebKit browsers */
   background-color: #43AA72;
 }
 
+.send-order-button:disabled {
+  color: #e3d8db;
+  background-color: #ab9ea2;
+  cursor: auto;
+}
+
 /*address*/
 
 .address-container {
@@ -260,6 +266,10 @@ input:-ms-input-placeholder { /* WebKit browsers */
 .street-input {
   width: 269px;
   padding-left: 15px;
+}
+
+.invalid-input {
+  border: 1px solid #b40b34 !important;
 }
 
 .house-input {
@@ -301,10 +311,10 @@ input:-ms-input-placeholder { /* WebKit browsers */
 }
 
 .payment-container button:hover {
-  background-color: #E7DEE1;
+  background-color: #f1eaed;
 }
 
-.payment-container button:active,  .payment-container button:disabled{
+.payment-container button:active, .payment-container button:disabled{
   background-color: #C5BABE;
   color: #77616A;
   border: 1px solid #77616A;
