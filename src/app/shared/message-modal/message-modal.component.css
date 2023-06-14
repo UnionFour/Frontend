@@ -1,0 +1,20 @@
+.message-container {
+  background-color: #FFFFFF;
+  position: fixed;
+  top: 70px;
+  border-radius: 10px;
+  width: 300px;
+  padding: 0 15px 0 15px;
+  left: calc(50vw - 155px);
+  z-index: 99999;
+  box-shadow: 0 4px 22px -6px rgba(6, 5, 50, 0.25);
+}
+
+p {
+  font-family: 'Inter', serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  text-align: center;
+  color: #5C434D;
+}
