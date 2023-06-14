@@ -3,6 +3,7 @@ import {AuthService} from "../../../core/services/auth.service";
 import {LastOrdersLoadingService} from "../../../core/services/last-orders-loading.service";
 import {SelectingProductsService} from "../../../core/services/selecting-products.service";
 import {Product} from "../../../core/models/product";
+import {OrderingService} from "../../../core/services/ordering.service";
 
 @Component({
   selector: 'app-last-orders',
@@ -20,10 +21,13 @@ export class LastOrdersComponent implements OnInit{
   constructor(private readonly _authService: AuthService,
               public changeRef: ChangeDetectorRef,
               private readonly _lastOrdersLoadingService: LastOrdersLoadingService,
-              private readonly _selectingProductsService: SelectingProductsService) {
+              private readonly _selectingProductsService: SelectingProductsService,
+              private readonly _orderingService: OrderingService) {
+    this._orderingService.newOrder$.subscribe((): void => {
+      this._lastOrdersLoadingService.loadLastProducts(window.localStorage["userId"]);
+    });
     this._lastOrdersLoadingService.lastProducts$.subscribe((lastProducts: Product[]): void => {
       this.lastProducts = lastProducts;
-      console.log(this.lastProducts);
       this.showLastOrder = (!!window.localStorage['jwt'] && this.lastProducts.length > 0);
       this.changeRef.markForCheck();
     });

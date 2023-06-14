@@ -12,8 +12,7 @@ export class LastOrdersLoadingService {
   public sub: Subscription | undefined;
 
   constructor(private readonly _apollo: Apollo) {
-    // TODO: заменить на айди юзера из локального стораджа
-    let userId: string = 'c830d378-96dd-499b-96d9-47cd2e46709a';
+    let userId: string = window.localStorage["userId"];
     this.loadLastProducts(userId);
   }
 

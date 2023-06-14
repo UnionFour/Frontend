@@ -3,12 +3,14 @@ import { UserOrder } from 'src/app/core/models/user-order'
 import {Apollo, gql} from 'apollo-angular';
 import {Order, OrderDtoInput, OrderExtradition, ProductDtoInput} from '../../../gql/graphql';
 import {DelayedProduct} from "../models/delayed-product";
+import {Subject} from "rxjs";
 
 @Injectable({
   providedIn: 'root',
 })
 export class OrderingService {
   order: UserOrder | undefined;
+  public newOrder$: Subject<undefined> = new Subject<undefined>();
 
   constructor(private readonly _apollo: Apollo) {
   }
@@ -37,7 +39,6 @@ export class OrderingService {
       address: this.order!.address,
       cost: this.order!.orderSum
     };
-    console.log(JSON.stringify(input));
     this._apollo.mutate({
       mutation: gql`
         mutation CreateOrder($input: OrderDTOInput!) {
@@ -54,8 +55,7 @@ export class OrderingService {
       `,
       variables: {input}
     }).subscribe(({data}): void => {
-      // TODO: убрать
-      console.log(data);
+      this.newOrder$.next(undefined);
     });
   }
 }
