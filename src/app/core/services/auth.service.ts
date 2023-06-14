@@ -2,6 +2,7 @@ import {Injectable } from '@angular/core';
 import {Apollo, gql} from 'apollo-angular'
 import {AuthPayload, TokenInput} from 'src/gql/graphql';
 import {map, Observable, Subject} from 'rxjs';
+import {MessagingService} from "./messaging.service";
 
 @Injectable({
   providedIn: 'root'
@@ -10,12 +11,13 @@ export class AuthService {
 
   public authorization$: Subject<boolean> = new Subject<boolean>();
 
-  constructor(private readonly _apollo: Apollo) {
+  constructor(private readonly _apollo: Apollo, private readonly _messagingService: MessagingService) {
     this.authorization$.next(!!window.localStorage['jwt']);
   }
 
   public signIn(): void {
     this.authorization$.next(true);
+    this._messagingService.sendModalMessage("Вы успешно авторизованы", 5000);
   }
 
   public signOut(): void {

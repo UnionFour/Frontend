@@ -57,7 +57,7 @@ export class OrderingService {
       variables: {input}
     }).subscribe(({data}): void => {
       this.newOrder$.next(undefined);
-      this._messagingService.sendModalMessage("Ваш заказ успешно оформлен.", 5000);
+      this._messagingService.sendModalMessage("Ваш заказ оформлен", 5000);
     });
   }
 }
