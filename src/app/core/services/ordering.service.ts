@@ -4,6 +4,7 @@ import {Apollo, gql} from 'apollo-angular';
 import {Order, OrderDtoInput, OrderExtradition, ProductDtoInput} from '../../../gql/graphql';
 import {DelayedProduct} from "../models/delayed-product";
 import {Subject} from "rxjs";
+import {MessagingService} from "./messaging.service";
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +13,7 @@ export class OrderingService {
   order: UserOrder | undefined;
   public newOrder$: Subject<undefined> = new Subject<undefined>();
 
-  constructor(private readonly _apollo: Apollo) {
+  constructor(private readonly _apollo: Apollo, private readonly _messagingService: MessagingService) {
   }
 
   public initializeOrder(order: UserOrder): void {
@@ -56,6 +57,7 @@ export class OrderingService {
       variables: {input}
     }).subscribe(({data}): void => {
       this.newOrder$.next(undefined);
+      this._messagingService.sendModalMessage("Ваш заказ оформлен", 5000);
     });
   }
 }

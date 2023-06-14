@@ -46,6 +46,7 @@ import {GameComponent} from "./features/game/game.component";
 import {AboutUsComponent} from "./features/about-us/about-us.component";
 import {ComponentHostDirective} from "./shared/directives/component-host.directive";
 import {SortComponent} from "./features/home/filter-sort/sort/sort.component";
+import {MessageModalComponent} from "./shared/message-modal/message-modal.component";
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import {SortComponent} from "./features/home/filter-sort/sort/sort.component";
     GameComponent,
     AboutUsComponent,
     ComponentHostDirective,
-    SortComponent
+    SortComponent,
+    MessageModalComponent
   ],
   imports: [
     AppRoutingModule,
