@@ -23,7 +23,7 @@ export class HomeComponent implements OnDestroy{
     this._subs.push(this._loadingProductsService.loadedCategories$
       .subscribe((categories: ProductCategory[]): void => {
 
-        // убрать (клонирование)
+        // TODO: убрать (клонирование)
         categories.forEach((category: ProductCategory): void => {
           categories.push(category);
         })

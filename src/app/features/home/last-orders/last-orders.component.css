@@ -26,6 +26,10 @@ h1 {
   line-height: 20px;
 }
 
+.tui-island__content {
+  font-weight: 600!important;
+}
+
 .tui-island__title {
   margin: 0 0 3px 0;
 }
