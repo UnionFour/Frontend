@@ -2,13 +2,7 @@ import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit} from '@an
 import {AuthService} from "../../../core/services/auth.service";
 import {LastOrdersLoadingService} from "../../../core/services/last-orders-loading.service";
 import {SelectingProductsService} from "../../../core/services/selecting-products.service";
-
-type LastProducts = {
-  productId: string,
-  name: string,
-  price: number,
-  picture: string
-}[];
+import {Product} from "../../../core/models/product";
 
 @Component({
   selector: 'app-last-orders',
@@ -19,7 +13,7 @@ type LastProducts = {
 export class LastOrdersComponent implements OnInit{
 
   public showLastOrder: boolean = false;
-  public lastProducts: LastProducts = [];
+  public lastProducts: Product[] = [];
   public index: number = 0;
   public itemsCount: number = 4;
 
@@ -27,8 +21,9 @@ export class LastOrdersComponent implements OnInit{
               public changeRef: ChangeDetectorRef,
               private readonly _lastOrdersLoadingService: LastOrdersLoadingService,
               private readonly _selectingProductsService: SelectingProductsService) {
-    this._lastOrdersLoadingService.lastProducts$.subscribe((lastProducts: LastProducts): void => {
+    this._lastOrdersLoadingService.lastProducts$.subscribe((lastProducts: Product[]): void => {
       this.lastProducts = lastProducts;
+      console.log(this.lastProducts);
       this.showLastOrder = (!!window.localStorage['jwt'] && this.lastProducts.length > 0);
       this.changeRef.markForCheck();
     });
@@ -69,7 +64,7 @@ export class LastOrdersComponent implements OnInit{
     this.index = index * this.itemsCount;
   }
 
-  public appendProduct(product: any): void {
-    console.log(product);
+  public appendProduct(product: Product): void {
+    this._selectingProductsService.addSelectedProduct(product);
   }
 }

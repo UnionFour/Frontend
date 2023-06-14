@@ -56,7 +56,7 @@ export class LoadingProductsService {
         product.price,
         product.picture,
         product.ingredients.map((ingredient: Ingredient) => {return new Ingredient(ingredient.name);})
-      )
+      );
     })
   }
 

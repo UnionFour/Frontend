@@ -10,8 +10,9 @@
           width="76px"
           height="76px"
           (click)="appendProduct(product)"
+          title="Добавить в корзину"
         >
-        <div class="text-container" (click)="appendProduct(product)">
+        <div class="text-container" (click)="appendProduct(product)" title="Добавить в корзину">
           <h2 class="tui-island__title">{{product.name}}</h2>
           <div class="tui-island__content">{{product.price}} ₽</div>
         </div>
