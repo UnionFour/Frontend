@@ -4,7 +4,7 @@ import {ApolloClientOptions, ApolloLink, InMemoryCache} from '@apollo/client/cor
 import {HttpLink} from 'apollo-angular/http';
 import { setContext } from '@apollo/client/link/context';
 
-const uri = 'https://localhost:7207/graphql'; // <-- add the URL of the GraphQL server here
+const uri = 'http://localhost:5251/graphql'; // <-- add the URL of the GraphQL server here
 export function createApollo(httpLink: HttpLink) {
   const auth = setContext((operation, context) => {
     const token = localStorage.getItem('jwt');
