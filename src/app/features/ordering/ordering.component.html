@@ -1,135 +1,136 @@
 <div class="container">
-  <div class="modal-container">
-    <div class="delivery-method">
-      <button class="delivery-button" [class.selected-method-button]="isDeliverySelected"
-              (click)="changeDeliveryMethod()">
-        Доставка
-      </button>
-      <button class="pickup-button" [class.selected-method-button]="!isDeliverySelected"
-              (click)="changeDeliveryMethod()">
-        Самовывоз
-      </button>
+    <div class="modal-container">
+        <div class="delivery-method">
+            <button class="delivery-button" [class.selected-method-button]="isDeliverySelected"
+                    (click)="changeDeliveryMethod()">
+                Доставка
+            </button>
+            <button class="pickup-button" [class.selected-method-button]="!isDeliverySelected"
+                    (click)="changeDeliveryMethod()">
+                Самовывоз
+            </button>
+        </div>
+        <div class="details">
+            <div class="order-header">
+                <form class="phone-group">
+                    <label for="phone"> Телефон</label>
+                    <input id="phone" type="tel" placeholder="{{phone}}" class="phone-input" disabled>
+                </form>
+                <div class="promo-code-container">
+                    <form class="promo-code-group" [formGroup]="promoCodeFormGroup">
+                        <input id="promo-code" type="text" placeholder="Промокод" class="promo-code-input"
+                               formControlName="promoCode">
+                    </form>
+                    <button class="promo-code-button" [disabled]="promoCodeFormGroup.invalid">
+                        Применить
+                    </button>
+                </div>
+            </div>
+            <div *ngIf="isDeliverySelected" class="delivery-details">
+                <div class="address-container">
+                    <label for="address-group">Адрес</label>
+                    <form [formGroup]="addressFormGroup" id="address-group">
+                        <input
+                                formControlName="street"
+                                id="street"
+                                placeholder="Улица"
+                                class="street-input"
+                                title="Улица"
+                                [class.invalid-input]="!addressFormGroup.controls['street'].valid"
+                        >
+                        <input
+                                formControlName="houseNumber"
+                                id="house-number"
+                                placeholder="Дом"
+                                class="house-input"
+                                title="Дом"
+                                [class.invalid-input]="!addressFormGroup.controls['houseNumber'].valid"
+                        >
+                        <input
+                                formControlName="entrance"
+                                id="entrance"
+                                placeholder="Подъезд"
+                                class="entrance-input"
+                                title="Подъезд"
+                        >
+                        <input
+                                formControlName="apartment"
+                                id="apartment"
+                                placeholder="Квартира"
+                                class="apartment-input"
+                                title="Квартира"
+                        >
+                        <input
+                                formControlName="floor"
+                                id="floor" placeholder="Этаж"
+                                class="floor-input"
+                                title="Этаж"
+                        >
+                        <input
+                                formControlName="doorCode"
+                                id="door-code"
+                                placeholder="Код двери"
+                                class="door-input"
+                                title="Код двери"
+                        >
+                    </form>
+                </div>
+                <div class="payment-container">
+                    <label>Способ оплаты</label>
+                    <button
+                            [disabled]="paymentMethods.getIsSelected('cash')"
+                            (click)="changePaymentMethod($event)"
+                            id="cash"
+                    >
+                        Наличные
+                    </button>
+                    <button
+                            [disabled]="paymentMethods.getIsSelected('bankCard')"
+                            (click)="changePaymentMethod($event)"
+                            id="bankCard"
+                    >
+                        Картой
+                    </button>
+                    <button
+                            [disabled]="paymentMethods.getIsSelected('sberPay')"
+                            (click)="changePaymentMethod($event)"
+                            id="sberPay"
+                    >
+                        SberPay
+                    </button>
+                </div>
+            </div>
+            <div *ngIf="!isDeliverySelected" class="pickup-details">
+                <label>Адрес</label>
+                <tui-select
+                        tuiTextfieldSize="m"
+                        class="tui-space_vertical-4"
+                        [formControl]="pickUpValue"
+                        [tuiTextfieldLabelOutside]="true"
+                >
+                    <input
+                            class="pick-up-input"
+                            tuiTextfield
+                            placeholder="Откуда заберёте?"
+                    />
+                    <tui-data-list-wrapper class="pick-up-addresses"
+                                           *tuiDataList
+                                           [items]="pickUpAddresses"
+                    ></tui-data-list-wrapper>
+                </tui-select>
+            </div>
+            <div class="details-footer">
+                <button class="exit-button" (click)="closeModal()">Назад</button>
+                <button
+                        class="send-order-button"
+                        [disabled]="!((addressFormGroup.valid && isDeliverySelected) || (pickUpValue.valid && !isDeliverySelected))"
+                        (click)="sendOrder()"
+                >Заказать за {{order.orderSum}}₽
+                </button>
+            </div>
+        </div>
     </div>
-    <div class="details">
-      <div class="order-header">
-        <form class="phone-group">
-          <label for="phone"> Телефон</label>
-          <input id="phone" type="tel" placeholder="{{phone}}" class="phone-input" disabled>
-        </form>
-        <div class="promo-code-container">
-          <form class="promo-code-group" [formGroup]="promoCodeFormGroup">
-            <input id="promo-code" type="text" placeholder="Промокод" class="promo-code-input"
-                   formControlName="promoCode">
-          </form>
-          <button class="promo-code-button" [disabled]="promoCodeFormGroup.invalid">
-            Применить
-          </button>
-        </div>
-      </div>
-      <div *ngIf="isDeliverySelected" class="delivery-details">
-        <div class="address-container">
-          <label for="address-group">Адрес</label>
-          <form [formGroup]="addressFormGroup" id="address-group">
-            <input
-              formControlName="street"
-              id="street"
-              placeholder="Улица"
-              class="street-input"
-              title="Улица"
-              [class.invalid-input]="!addressFormGroup.controls['street'].valid"
-            >
-            <input
-              formControlName="houseNumber"
-              id="house-number"
-              placeholder="Дом"
-              class="house-input"
-              title="Дом"
-              [class.invalid-input]="!addressFormGroup.controls['houseNumber'].valid"
-            >
-            <input
-              formControlName="entrance"
-              id="entrance"
-              placeholder="Подъезд"
-              class="entrance-input"
-              title="Подъезд"
-            >
-            <input
-              formControlName="apartment"
-              id="apartment"
-              placeholder="Квартира"
-              class="apartment-input"
-              title="Квартира"
-            >
-            <input
-              formControlName="floor"
-              id="floor" placeholder="Этаж"
-              class="floor-input"
-              title="Этаж"
-            >
-            <input
-              formControlName="doorCode"
-              id="door-code"
-              placeholder="Код двери"
-              class="door-input"
-              title="Код двери"
-            >
-          </form>
-        </div>
-        <div class="payment-container">
-          <label>Способ оплаты</label>
-          <button
-            [disabled]="paymentMethods.getIsSelected('cash')"
-            (click)="changePaymentMethod($event)"
-            id="cash"
-          >
-            Наличные
-          </button>
-          <button
-            [disabled]="paymentMethods.getIsSelected('bankCard')"
-            (click)="changePaymentMethod($event)"
-            id="bankCard"
-          >
-            Картой
-          </button>
-          <button
-            [disabled]="paymentMethods.getIsSelected('sberPay')"
-            (click)="changePaymentMethod($event)"
-            id="sberPay"
-          >
-            SberPay
-          </button>
-        </div>
-      </div>
-      <div *ngIf="!isDeliverySelected" class="pickup-details">
-        <label>Адрес</label>
-        <tui-select
-          tuiTextfieldSize="m"
-          class="tui-space_vertical-4"
-          [formControl]="pickUpValue"
-          [tuiTextfieldLabelOutside]="true"
-        >
-          <input
-            class="pick-up-input"
-            tuiTextfield
-            placeholder="Откуда заберёте?"
-          />
-          <tui-data-list-wrapper class="pick-up-addresses"
-            *tuiDataList
-            [items]="pickUpAddresses"
-          ></tui-data-list-wrapper>
-        </tui-select>
-      </div>
-      <div class="details-footer">
-        <button class="exit-button" (click)="closeModal()">Назад</button>
-        <button
-          class="send-order-button"
-          [disabled]="!((addressFormGroup.valid && isDeliverySelected) || (pickUpValue.valid && !isDeliverySelected))"
-          (click)="sendOrder()"
-        >Заказать за {{order.orderSum}}₽</button>
-      </div>
-    </div>
-  </div>
-  <div class="shadow">
+    <div class="shadow">
 
-  </div>
+    </div>
 </div>

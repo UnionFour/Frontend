@@ -1,36 +1,36 @@
 <div class="account-container">
-  <h1>Личные данные</h1>
-  <div class="account-fields">
-    <label for="phone">Телефон</label>
-    <input id="phone" type="tel" placeholder="{{phone}}" disabled>
-    <div class="form-group">
-      <form [formGroup]="nameForm">
-        <label for="name">Имя</label>
-        <input id="name" type="text" name="name" formControlName="userName">
-      </form>
-      <button [disabled]="nameForm.invalid" (click)="saveName()">Сохранить</button>
+    <h1>Личные данные</h1>
+    <div class="account-fields">
+        <label for="phone">Телефон</label>
+        <input id="phone" type="tel" placeholder="{{phone}}" disabled>
+        <div class="form-group">
+            <form [formGroup]="nameForm">
+                <label for="name">Имя</label>
+                <input id="name" type="text" name="name" formControlName="userName">
+            </form>
+            <button [disabled]="nameForm.invalid" (click)="saveName()">Сохранить</button>
+        </div>
+        <div class="form-group">
+            <form [formGroup]="emailForm">
+                <label for="mail">Эл. почта</label>
+                <input id="mail" type="email" name="email" formControlName="userEmail">
+            </form>
+            <button [disabled]="emailForm.invalid" (click)="saveEmail()">Сохранить</button>
+        </div>
+        <div class="form-group birthday-form-group">
+            <form [formGroup]="birthdayForm">
+                <label for="birthday">День рождения</label>
+                <tui-input-date
+                        formControlName="userBirthday"
+                        tuiTextfieldSize="l"
+                        class="tui-space_vertical-4"
+                        [tuiTextfieldLabelOutside]="true"
+                        id="birthday"
+                >
+                </tui-input-date>
+            </form>
+            <button [disabled]="birthdayForm.invalid" (click)="saveBirthday()">Сохранить</button>
+        </div>
     </div>
-    <div class="form-group">
-      <form [formGroup]="emailForm">
-        <label for="mail">Эл. почта</label>
-        <input id="mail" type="email" name="email" formControlName="userEmail">
-      </form>
-      <button [disabled]="emailForm.invalid" (click)="saveEmail()">Сохранить</button>
-    </div>
-    <div class="form-group birthday-form-group">
-      <form [formGroup]="birthdayForm">
-        <label for="birthday">День рождения</label>
-        <tui-input-date
-          formControlName="userBirthday"
-          tuiTextfieldSize="l"
-          class="tui-space_vertical-4"
-          [tuiTextfieldLabelOutside]="true"
-          id="birthday"
-        >
-        </tui-input-date>
-      </form>
-      <button [disabled]="birthdayForm.invalid" (click)="saveBirthday()">Сохранить</button>
-    </div>
-  </div>
-  <button class="exit-button" (click)="signOut()">Выйти</button>
+    <button class="exit-button" (click)="signOut()">Выйти</button>
 </div>

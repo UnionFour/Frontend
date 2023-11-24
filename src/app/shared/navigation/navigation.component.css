@@ -1,28 +1,28 @@
 nav {
-  background-color: #FFFFFF;
-  padding: 10px 0 10px 0;
-  z-index: 9999;
+    background-color: #FFFFFF;
+    padding: 10px 0 10px 0;
+    z-index: 9999;
 }
 
 nav a {
-  display: inline-block;
-  margin: 0 31px 0 0;
-  padding: 9px 0 9px 0;
-  font-family: 'Inter', serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 22px;
+    display: inline-block;
+    margin: 0 31px 0 0;
+    padding: 9px 0 9px 0;
+    font-family: 'Inter', serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
 }
 
 nav a:last-child {
-  margin-right: 0;
+    margin-right: 0;
 }
 
 nav a:hover {
-  color: #43AA72;
+    color: #43AA72;
 }
 
 nav a:active {
-  color: #2A8955;
+    color: #2A8955;
 }

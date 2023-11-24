@@ -1,15 +1,15 @@
 .media {
-  width: min(1306px, calc(100% - 30px));
-  margin: 0 auto 0 auto;
-  padding: 0 15px 0 15px;
+    width: min(1306px, calc(100% - 30px));
+    margin: 0 auto 0 auto;
+    padding: 0 15px 0 15px;
 }
 
-tui-root, .media{
-  min-height: 100vh;
+tui-root, .media {
+    min-height: 100vh;
 }
 
 app-navigation {
-  position: sticky;
-  z-index: 1000;
-  top: 0;
+    position: sticky;
+    z-index: 1000;
+    top: 0;
 }

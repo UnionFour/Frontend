@@ -1,69 +1,69 @@
 footer {
-  width: 100%;
-  height: 200px;
-  background: #5C434D;
-  /*margin: 200px 0 0 0;*/
-  font-family: 'Inter', serif;
-  font-style: normal;
-  color: #FFFFFF;
+    width: 100%;
+    height: 200px;
+    background: #5C434D;
+    /*margin: 200px 0 0 0;*/
+    font-family: 'Inter', serif;
+    font-style: normal;
+    color: #FFFFFF;
 }
 
 .container {
-  position:  relative;
-  width: min(1306px, calc(100% - 30px));
-  margin: 0 auto 0 auto;
-  padding: 0 15px 0 15px;
+    position: relative;
+    width: min(1306px, calc(100% - 30px));
+    margin: 0 auto 0 auto;
+    padding: 0 15px 0 15px;
 }
 
-.navigation li a{
-  color: #FFFFFF;
-  font-size: 16px;
-  font-weight: 400;
+.navigation li a {
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 400;
 }
 
 .navigation li {
-  margin: 0 0 10px 0;
+    margin: 0 0 10px 0;
 }
 
 .navigation li a:hover {
-  color: #D2D2D2;
+    color: #D2D2D2;
 }
 
 .navigation li a:active {
-  color: #8F8F8F;
+    color: #8F8F8F;
 }
 
 .navigation li:last-child {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
 
-.navigation, .social-networks,  .social-networks li{
-  display: inline-block;
+.navigation, .social-networks, .social-networks li {
+    display: inline-block;
 }
 
 .navigation {
-  margin-top: 23px;
+    margin-top: 23px;
 }
 
 .franchising {
-  font-size: 10px;
-  margin-top: 15px;
+    font-size: 10px;
+    margin-top: 15px;
 }
 
 .franchising p {
-  color: #D2D2D2;
-  margin: 0;
+    color: #D2D2D2;
+    margin: 0;
 }
 
 .social-networks {
-  margin: 50px 0 0 50px;
-  position:  absolute;
+    margin: 50px 0 0 50px;
+    position: absolute;
 }
 
 .social-networks li {
-  margin: 0 0 0 7px;
+    margin: 0 0 0 7px;
 }
 
 .social-networks li:first-child {
-  margin-left: 0;
+    margin-left: 0;
 }

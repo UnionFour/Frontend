@@ -1,65 +1,65 @@
-.spare-promo-cart-container *{
-  display: none;
+.spare-promo-cart-container * {
+    display: none;
 }
 
 @media (min-width: 1336px) {
-  .promo-cart-container {
-    margin-left: 70px;
-    position: sticky;
-    top: 150px;
-    margin-top: 72px;
-  }
+    .promo-cart-container {
+        margin-left: 70px;
+        position: sticky;
+        top: 150px;
+        margin-top: 72px;
+    }
 }
 
-@media (min-width: 1012px) and (max-width: 1335px){
-  .promo-cart-container {
-    margin-left: 3%;
-    position: sticky;
-    top: 150px;
-    margin-top: 72px;
-  }
+@media (min-width: 1012px) and (max-width: 1335px) {
+    .promo-cart-container {
+        margin-left: 3%;
+        position: sticky;
+        top: 150px;
+        margin-top: 72px;
+    }
 }
 
-@media (min-width: 703px) and (max-width: 1011px){
-  .promo-cart-container {
-    margin-left: 2%;
-    position: sticky;
-    top: 150px;
-    margin-top: 72px;
-  }
+@media (min-width: 703px) and (max-width: 1011px) {
+    .promo-cart-container {
+        margin-left: 2%;
+        position: sticky;
+        top: 150px;
+        margin-top: 72px;
+    }
 }
 
 @media (min-width: 658px) and (max-width: 702px) {
-  .promo-cart-container {
-    margin-left: 0;
+    .promo-cart-container {
+        margin-left: 0;
 
-    position: sticky;
-    z-index: 1000;
-    top: 150px;
-    margin-top: 72px;
-  }
+        position: sticky;
+        z-index: 1000;
+        top: 150px;
+        margin-top: 72px;
+    }
 }
 
 @media (max-width: 657px) {
-  .promo-cart-container * {
-    display: none;
-  }
+    .promo-cart-container * {
+        display: none;
+    }
 
-  .spare-promo-cart-container * {
-    display: block;
-  }
+    .spare-promo-cart-container * {
+        display: block;
+    }
 
-  .spare-promo-cart-container {
-    margin-left: calc(50vw - 172px);
-    margin-bottom: 50px;
-  }
+    .spare-promo-cart-container {
+        margin-left: calc(50vw - 172px);
+        margin-bottom: 50px;
+    }
 }
 
 app-shopping-cart, app-promocode-field, .promo-cart-container {
-  display: inline-block;
-  width: 304px;
+    display: inline-block;
+    width: 304px;
 }
 
 .promo-cart-container {
-  vertical-align: top;
+    vertical-align: top;
 }

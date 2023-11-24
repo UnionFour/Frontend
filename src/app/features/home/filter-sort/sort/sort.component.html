@@ -1,9 +1,9 @@
 <div class="sort-container">
-  <ng-container *ngFor="let sortMethod of sortMethods">
-    <button
-      class="sort-method"
-      [class.chosen]="sortMethod.isChosen"
-      (click)="sortGoods($event)"
-    >{{sortMethod.sortName}}</button>
-  </ng-container>
+    <ng-container *ngFor="let sortMethod of sortMethods">
+        <button
+                class="sort-method"
+                [class.chosen]="sortMethod.isChosen"
+                (click)="sortGoods($event)"
+        >{{sortMethod.sortName}}</button>
+    </ng-container>
 </div>

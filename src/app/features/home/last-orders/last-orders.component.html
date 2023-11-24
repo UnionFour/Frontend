@@ -1,22 +1,22 @@
 <div *ngIf="showLastOrder">
-  <h1>Последние заказы</h1>
-  <tui-carousel [itemsCount]="itemsCount" [(index)]="index" [draggable]="true">
-    <ng-container *ngFor="let product of lastProducts">
-      <div *tuiItem class="item">
-        <img
-          src="{{product.picture}}"
-          alt="product"
-          class="last-orders-img"
-          width="76px"
-          height="76px"
-          (click)="appendProduct(product)"
-          title="Добавить в корзину"
-        >
-        <div class="text-container" (click)="appendProduct(product)" title="Добавить в корзину">
-          <h2 class="tui-island__title">{{product.name}}</h2>
-          <div class="tui-island__content">{{product.price}} ₽</div>
-        </div>
-      </div>
-    </ng-container>
-  </tui-carousel>
+    <h1>Последние заказы</h1>
+    <tui-carousel [itemsCount]="itemsCount" [(index)]="index" [draggable]="true">
+        <ng-container *ngFor="let product of lastProducts">
+            <div *tuiItem class="item">
+                <img
+                        src="{{product.picture}}"
+                        alt="product"
+                        class="last-orders-img"
+                        width="76px"
+                        height="76px"
+                        (click)="appendProduct(product)"
+                        title="Добавить в корзину"
+                >
+                <div class="text-container" (click)="appendProduct(product)" title="Добавить в корзину">
+                    <h2 class="tui-island__title">{{product.name}}</h2>
+                    <div class="tui-island__content">{{product.price}} ₽</div>
+                </div>
+            </div>
+        </ng-container>
+    </tui-carousel>
 </div>

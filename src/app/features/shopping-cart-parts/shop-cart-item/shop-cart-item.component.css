@@ -1,87 +1,87 @@
 p {
-  margin: 0;
+    margin: 0;
 }
 
 .product {
-  margin: 0 0 25px 0;
-  display: flex;
+    margin: 0 0 25px 0;
+    display: flex;
 
-  position:relative;
+    position: relative;
 }
 
 .cross {
-  background: url("src/assets/img/cross.svg") no-repeat;
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  border: none;
-  top: 0;
-  right: 0;
-  cursor: pointer;
+    background: url("src/assets/img/cross.svg") no-repeat;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    border: none;
+    top: 0;
+    right: 0;
+    cursor: pointer;
 }
 
 .cross:hover {
-  background: url("src/assets/img/cross_hover.svg") no-repeat;
+    background: url("src/assets/img/cross_hover.svg") no-repeat;
 }
 
 .cross:active {
-  background: url("src/assets/img/cross_active.svg") no-repeat;
+    background: url("src/assets/img/cross_active.svg") no-repeat;
 }
 
 .product-name {
-  font-weight: 600;
-  font-size: 15px;
-  line-height: 21px;
-  text-align: center;
-  margin: 0 0 0 12px;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 21px;
+    text-align: center;
+    margin: 0 0 0 12px;
 }
 
 .description {
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 19px;
-  color: #8F8F8F;
-  margin: 0 0 0 15px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: #8F8F8F;
+    margin: 0 0 0 15px;
 }
 
 .sum-container, .product, .count-control {
-  display: flex;
+    display: flex;
 }
 
 .count-control {
-  margin: 9px 0 0 0;
-  display: flex;
+    margin: 9px 0 0 0;
+    display: flex;
 }
 
 .plus, .minus {
-  border: none;
-  background-color: #FFF1D6;
-  cursor: pointer;
-  width: 21px;
-  height: 21px;
-  border-radius: 100px;
+    border: none;
+    background-color: #FFF1D6;
+    cursor: pointer;
+    width: 21px;
+    height: 21px;
+    border-radius: 100px;
 }
 
 .minus {
-  margin: 0 8px 0 12px;
+    margin: 0 8px 0 12px;
 }
 
 .plus {
-  margin: 0 0 0 8px;
+    margin: 0 0 0 8px;
 }
 
 .plus:hover, .minus:hover {
-  background-color: #F4DCAE;
+    background-color: #F4DCAE;
 }
 
 .plus:active, .minus:active {
-  background-color: #FFF8EA;
-  color: #CBAA6B;
+    background-color: #FFF8EA;
+    color: #CBAA6B;
 }
 
 .this-products-price {
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 21px;
-  margin: 0 2px 0 auto;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 21px;
+    margin: 0 2px 0 auto;
 }

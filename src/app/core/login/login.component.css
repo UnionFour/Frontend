@@ -1,38 +1,38 @@
 button {
-  border: none;
-  cursor: pointer;
-  background-color: #FFFFFF;
-  color: #30915C;
-  font-family: 'Inter', serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  display: block;
-  width: 100%;
-  margin: 20px 0 0 0;
+    border: none;
+    cursor: pointer;
+    background-color: #FFFFFF;
+    color: #30915C;
+    font-family: 'Inter', serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    display: block;
+    width: 100%;
+    margin: 20px 0 0 0;
 }
 
 button:hover {
-  color: #2A8955;
+    color: #2A8955;
 }
 
 button:active {
-  text-shadow: 0 0 6px rgba(67, 170, 114, 0.35);
+    text-shadow: 0 0 6px rgba(67, 170, 114, 0.35);
 }
 
-label{
-  font-family: 'Inter', serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
+label {
+    font-family: 'Inter', serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
 }
 
 tui-input {
-  margin: 15px 0 0 0;
-  padding: 10px;
+    margin: 15px 0 0 0;
+    padding: 10px;
 }
 
 #code {
-  margin: 8px 0 0 0;
-  padding: 10px;
+    margin: 8px 0 0 0;
+    padding: 10px;
 }

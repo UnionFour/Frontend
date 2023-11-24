@@ -1,59 +1,59 @@
 @media (min-width: 1336px) {
-  .goods-container {
-    width: calc(100% - 374px);
-  }
+    .goods-container {
+        width: calc(100% - 374px);
+    }
 }
 
-@media (min-width: 1012px) and (max-width: 1335px){
-  .goods-container {
-    width: 648px;
-    margin-left: calc(50% - 491px);
-  }
+@media (min-width: 1012px) and (max-width: 1335px) {
+    .goods-container {
+        width: 648px;
+        margin-left: calc(50% - 491px);
+    }
 }
 
-@media (min-width: 703px) and (max-width: 1011px){
-  .goods-container {
-    width: 324px;
-    margin-left: calc(50% - 305px);
-  }
+@media (min-width: 703px) and (max-width: 1011px) {
+    .goods-container {
+        width: 324px;
+        margin-left: calc(50% - 305px);
+    }
 }
 
 @media (min-width: 658px) and (max-width: 702px) {
-  .goods-container {
-    width: 324px;
-    margin-left: 0;
-  }
+    .goods-container {
+        width: 324px;
+        margin-left: 0;
+    }
 }
 
 @media (max-width: 657px) {
-  .goods-container {
-    width: 324px;
-    margin-left: calc(50% - 147px);
-  }
+    .goods-container {
+        width: 324px;
+        margin-left: calc(50% - 147px);
+    }
 }
 
 .goods-container {
-  font-family: 'Inter', serif;
-  font-style: normal;
-  display: inline-block;
-  margin-bottom: 68px;
+    font-family: 'Inter', serif;
+    font-style: normal;
+    display: inline-block;
+    margin-bottom: 68px;
 }
 
 .good-cards {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 -20px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -20px;
 }
 
 h1 {
-  font-weight: 600;
-  font-size: 30px;
-  line-height: 36px;
-  margin: 0 0 0 34px;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 36px;
+    margin: 0 0 0 34px;
 }
 
 h2 {
-  font-weight: 400;
-  font-size: 20px;
-  margin: 100px 0 150px 20px;
+    font-weight: 400;
+    font-size: 20px;
+    margin: 100px 0 150px 20px;
 }

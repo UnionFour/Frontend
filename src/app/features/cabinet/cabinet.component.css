@@ -1,132 +1,132 @@
 h1 {
-  margin: 50px 0 68px 0;
-  font-size: 26px;
+    margin: 50px 0 68px 0;
+    font-size: 26px;
 }
 
 @media (min-width: 1600px) {
-  .account-container {
-    margin-left: 0;
-  }
+    .account-container {
+        margin-left: 0;
+    }
 }
 
 @media (min-width: 757px) and (max-width: 1599px) {
-  .account-container {
-    margin-left: calc(150px - 10vw);
-  }
+    .account-container {
+        margin-left: calc(150px - 10vw);
+    }
 }
 
 @media (min-width: 650px) and (max-width: 756px) {
-  .account-container {
-    margin-left: calc(150px - 10vw);
-  }
+    .account-container {
+        margin-left: calc(150px - 10vw);
+    }
 
-  h1 {
-    margin-top: 10px;
-  }
+    h1 {
+        margin-top: 10px;
+    }
 }
 
 @media (max-width: 649px) {
-  .account-container {
-    margin-left: calc(50vw - 240px);
-  }
+    .account-container {
+        margin-left: calc(50vw - 240px);
+    }
 
-  h1 {
-    margin-top: 10px;
-  }
+    h1 {
+        margin-top: 10px;
+    }
 }
 
 label {
-  display: block;
-  font-family: 'Inter', serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 24px;
+    display: block;
+    font-family: 'Inter', serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
 }
 
 .form-group {
-  display: flex;
-  margin: 31px 0 0 0;
+    display: flex;
+    margin: 31px 0 0 0;
 }
 
 .account-fields .form-group:first-child {
-  margin-top: 0;
+    margin-top: 0;
 }
 
 .form-group button {
-  width: 97px;
-  height: 22px;
-  cursor: pointer;
-  border: none;
-  background-color: rgba(67, 170, 114, 0);
-  font-family: 'Inter', serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 22px;
-  color: #43AA72;
-  margin: 48px 0 auto 23px;
+    width: 97px;
+    height: 22px;
+    cursor: pointer;
+    border: none;
+    background-color: rgba(67, 170, 114, 0);
+    font-family: 'Inter', serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #43AA72;
+    margin: 48px 0 auto 23px;
 }
 
 .form-group button:hover {
-  color: #30915C;
+    color: #30915C;
 }
 
 .form-group button:enabled:active {
-  color: #43AA72;
-  text-shadow: 4px 4px 12px rgba(67, 170, 114, 0.35);
+    color: #43AA72;
+    text-shadow: 4px 4px 12px rgba(67, 170, 114, 0.35);
 }
 
 .exit-button {
-  width: 120px;
-  height: 40px;
-  font-family: 'Inter', serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 15px;
-  line-height: 24px;
-  color: #FFFFFF;
-  background: #77616A;
-  border-radius: 9999px;
-  border: none;
-  cursor: pointer;
-  margin: 125px 0 20px 0;
+    width: 120px;
+    height: 40px;
+    font-family: 'Inter', serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 24px;
+    color: #FFFFFF;
+    background: #77616A;
+    border-radius: 9999px;
+    border: none;
+    cursor: pointer;
+    margin: 125px 0 20px 0;
 }
 
 .exit-button:hover {
-  background-color: #715661;
+    background-color: #715661;
 }
 
 .exit-button:active {
-  background-color: #5C434D;
-  color: #C5BABE;
+    background-color: #5C434D;
+    color: #C5BABE;
 }
 
 .form-group button:disabled {
-  color: #8F8F8F;
+    color: #8F8F8F;
 }
 
 .form-group button:disabled:active {
-  color: #8F8F8F;
+    color: #8F8F8F;
 }
 
 tui-input-date {
-  font-size: 30px;
+    font-size: 30px;
 }
 
 .birthday-form-group button {
-  margin-top: 55px;
+    margin-top: 55px;
 }
 
 input {
-  width: 300px;
-  height: 30px;
-  margin: 17px 0 0 0;
-  padding: 5px 10px;
+    width: 300px;
+    height: 30px;
+    margin: 17px 0 0 0;
+    padding: 5px 10px;
 
-  font-family: 'Inter', serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 15px;
-  line-height: 24px;
+    font-family: 'Inter', serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 24px;
 }

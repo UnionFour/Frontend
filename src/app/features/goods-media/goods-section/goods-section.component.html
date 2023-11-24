@@ -1,9 +1,9 @@
 <div class="goods-container" id="pizza">
-  <h1>{{sectionName}}</h1>
-  <div class="good-cards">
-    <div *ngFor="let product of products">
-      <good-card [product]="product"></good-card>
+    <h1>{{sectionName}}</h1>
+    <div class="good-cards">
+        <div *ngFor="let product of products">
+            <good-card [product]="product"></good-card>
+        </div>
+        <h2 *ngIf="isEmpty">По вашему запросу ничего не нашлось</h2>
     </div>
-    <h2 *ngIf="isEmpty">По вашему запросу ничего не нашлось</h2>
-  </div>
 </div>

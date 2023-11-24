@@ -1,31 +1,31 @@
 <div id="home-container">
-  <app-promotions></app-promotions>
-  <app-last-orders></app-last-orders>
-  <app-filter-sort></app-filter-sort>
-  <div class="goods-cart-promo-container">
-    <div class="spare-promo-cart-container">
-      <app-shopping-cart></app-shopping-cart>
-      <app-promocode-field></app-promocode-field>
-    </div>
-    <app-goods-section
-      *ngIf="tempCategories[0]"
-      [sectionName]="tempCategories[0].name"
-      [products]="tempCategories[0].products"
-    >
-    </app-goods-section>
-    <div class="promo-cart-container">
-      <app-shopping-cart></app-shopping-cart>
-      <app-promocode-field></app-promocode-field>
-    </div>
-    <ng-container *ngIf="tempCategories.length > 1">
-      <ng-container *ngFor="let category of tempCategories.slice(1)">
+    <app-promotions></app-promotions>
+    <app-last-orders></app-last-orders>
+    <app-filter-sort></app-filter-sort>
+    <div class="goods-cart-promo-container">
+        <div class="spare-promo-cart-container">
+            <app-shopping-cart></app-shopping-cart>
+            <app-promocode-field></app-promocode-field>
+        </div>
         <app-goods-section
-          [sectionName]="category.name"
-          [products]="category.products"
+                *ngIf="tempCategories[0]"
+                [sectionName]="tempCategories[0].name"
+                [products]="tempCategories[0].products"
         >
         </app-goods-section>
-      </ng-container>
-    </ng-container>
-  </div>
-  <router-outlet></router-outlet>
+        <div class="promo-cart-container">
+            <app-shopping-cart></app-shopping-cart>
+            <app-promocode-field></app-promocode-field>
+        </div>
+        <ng-container *ngIf="tempCategories.length > 1">
+            <ng-container *ngFor="let category of tempCategories.slice(1)">
+                <app-goods-section
+                        [sectionName]="category.name"
+                        [products]="category.products"
+                >
+                </app-goods-section>
+            </ng-container>
+        </ng-container>
+    </div>
+    <router-outlet></router-outlet>
 </div>

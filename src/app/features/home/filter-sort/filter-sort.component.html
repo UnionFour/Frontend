@@ -1,19 +1,19 @@
 <div class="container">
-  <div class="filter-container">
-    <p>Фильтр</p>
-    <ng-container *ngFor="let filter of filters">
-      <div class="filter-button" (click)="filterGoods($event)" [class.chosen]="filter.isChosen">
-        <div class="filter-button-name">{{filter.filterValue}}</div>
-      </div>
-    </ng-container>
-  </div>
-  <button
-    class="sort-button"
-    (click)="toggleOpennessAuthComponent()"
-    [class.open-sort]="isOpenSort"
-  >
-  </button>
-  <div class="sort-component">
-    <ng-template componentsHost></ng-template>
-  </div>
+    <div class="filter-container">
+        <p>Фильтр</p>
+        <ng-container *ngFor="let filter of filters">
+            <div class="filter-button" (click)="filterGoods($event)" [class.chosen]="filter.isChosen">
+                <div class="filter-button-name">{{filter.filterValue}}</div>
+            </div>
+        </ng-container>
+    </div>
+    <button
+            class="sort-button"
+            (click)="toggleOpennessAuthComponent()"
+            [class.open-sort]="isOpenSort"
+    >
+    </button>
+    <div class="sort-component">
+        <ng-template componentsHost></ng-template>
+    </div>
 </div>

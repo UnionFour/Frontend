@@ -1,21 +1,21 @@
 <ng-container *ngIf="!smsCodeSent; else elseBlock">
-  <tui-input-phone id="phone" type="text" [formControl]="phone" required>
-    Введите номер телефона:
-  </tui-input-phone>
-  <button (click)="sendSmsCode()">Выслать код</button>
+    <tui-input-phone id="phone" type="text" [formControl]="phone" required>
+        Введите номер телефона:
+    </tui-input-phone>
+    <button (click)="sendSmsCode()">Выслать код</button>
 </ng-container>
 
 <ng-template #elseBlock>
-  <label for="code">
-    Введите код:
-  </label>
-  <tui-input
-    tuiTextfieldSize="m"
-    [tuiTextfieldLabelOutside]="true"
-  >
-    <input
-      tuiTextfield
-      id="code" type="text" [formControl]="code" mask="000000"
-    />
-  </tui-input>
+    <label for="code">
+        Введите код:
+    </label>
+    <tui-input
+            tuiTextfieldSize="m"
+            [tuiTextfieldLabelOutside]="true"
+    >
+        <input
+                tuiTextfield
+                id="code" type="text" [formControl]="code" mask="000000"
+        />
+    </tui-input>
 </ng-template>

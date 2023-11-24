@@ -1,199 +1,210 @@
 .filter-button {
-  cursor: pointer;
-  background: #FFFFFF;
-  border: 1px solid #C5BABE;
-  border-radius: 9999px;
-  padding: 8px 30px 8px 31px;
-  margin: 0 20px 10px 0;
+    cursor: pointer;
+    background: #FFFFFF;
+    border: 1px solid #C5BABE;
+    border-radius: 9999px;
+    padding: 8px 30px 8px 31px;
+    margin: 0 20px 10px 0;
 }
 
 .sort-button {
-  margin: 9px 0 20px 20px;
+    margin: 9px 0 20px 20px;
 }
 
 @media (min-width: 1011px) {
-  .filter-container .filter-button:nth-child(6) {
-    margin-right: 10px;
-  }
+    .filter-container .filter-button:nth-child(6) {
+        margin-right: 10px;
+    }
 }
 
 @media (min-width: 840px) and (max-width: 1010px) {
-  .filter-container .filter-button:last-child {
-    margin-bottom: 0;
-  }
+    .filter-container .filter-button:last-child {
+        margin-bottom: 0;
+    }
 
-  .filter-container .filter-button:nth-child(5) {
-    margin-right: 10px;
-  }
+    .filter-container .filter-button:nth-child(5) {
+        margin-right: 10px;
+    }
 
-  .filter-container .filter-button:nth-child(6) {
-    margin-left: 109px;
-  }
+    .filter-container .filter-button:nth-child(6) {
+        margin-left: 109px;
+    }
 
-  .filter-container {
-    width: 758px;
-  }
+    .filter-container {
+        width: 758px;
+    }
 }
 
 @media (min-width: 668px) and (max-width: 839px) {
-  .filter-container .filter-button:nth-child(n + 5) {
-    margin-bottom: 0;
-  }
+    .filter-container .filter-button:nth-child(n + 5) {
+        margin-bottom: 0;
+    }
 
-  .filter-container .filter-button:nth-child(4) {
-    margin-right: 10px;
-  }
+    .filter-container .filter-button:nth-child(4) {
+        margin-right: 10px;
+    }
 
-  .filter-container .filter-button:nth-child(5) {
-    margin-left: 109px;
-  }
+    .filter-container .filter-button:nth-child(5) {
+        margin-left: 109px;
+    }
 
-  .filter-container {
-    width: 620px;
-  }
+    .filter-container {
+        width: 620px;
+    }
 
-  .sort-button {
-    margin-left: 0;
-  }
+    .sort-button {
+        margin-left: 0;
+    }
 }
 
 @media (min-width: 556px) and (max-width: 667px) {
-  .filter-container .filter-button:nth-child(n + 4) {
-    margin-bottom: 0;
-  }
-  .filter-container .filter-button:nth-child(3) {
-    margin-right: 10px;
-  }
-  .filter-container .filter-button:last-child {
-    margin-right: 0;
-  }
-  .filter-container {
-    width: 492px;
-  }
-  .sort-button {
-    margin-left: 0;
-  }
+    .filter-container .filter-button:nth-child(n + 4) {
+        margin-bottom: 0;
+    }
+
+    .filter-container .filter-button:nth-child(3) {
+        margin-right: 10px;
+    }
+
+    .filter-container .filter-button:last-child {
+        margin-right: 0;
+    }
+
+    .filter-container {
+        width: 492px;
+    }
+
+    .sort-button {
+        margin-left: 0;
+    }
 }
 
 @media (min-width: 500px) and (max-width: 555px) {
-  p {
-    margin-right: 20px!important;
-  }
-  .filter-container .filter-button:last-child {
-    margin-bottom: 0;
-  }
-  .filter-container .filter-button:nth-child(3) {
-    margin-right: 10px;
-  }
-  .filter-container .filter-button:last-child {
-    margin-right: 0;
-  }
-  .filter-container {
-    width: 385px;
-  }
-  .sort-button {
-    margin-left: 30px;
-  }
+    p {
+        margin-right: 20px !important;
+    }
+
+    .filter-container .filter-button:last-child {
+        margin-bottom: 0;
+    }
+
+    .filter-container .filter-button:nth-child(3) {
+        margin-right: 10px;
+    }
+
+    .filter-container .filter-button:last-child {
+        margin-right: 0;
+    }
+
+    .filter-container {
+        width: 385px;
+    }
+
+    .sort-button {
+        margin-left: 30px;
+    }
 }
 
 @media (max-width: 499px) {
-  p {
-    margin-right: 10px!important;
-  }
-  .filter-button {
-    margin-right: 5px;
-  }
-  .sort-button {
-    margin-left: 0;
-  }
+    p {
+        margin-right: 10px !important;
+    }
+
+    .filter-button {
+        margin-right: 5px;
+    }
+
+    .sort-button {
+        margin-left: 0;
+    }
 }
 
 .container {
-  display: flex;
-  margin: 40px 0 68px 0;
+    display: flex;
+    margin: 40px 0 68px 0;
 }
 
 .filter-container {
-  display: flex;
-  flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 p, .filter-button-name {
-  font-family: 'Inter', serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 15px;
-  line-height: 24px;
-  margin: 0;
+    font-family: 'Inter', serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 24px;
+    margin: 0;
 }
 
 p {
-  color: #8F8F8F;
-  margin: 8px 53px 19px 0;
-  align-self: start;
+    color: #8F8F8F;
+    margin: 8px 53px 19px 0;
+    align-self: start;
 }
 
 .filter-button-name {
-  color: #5C434D;
+    color: #5C434D;
 }
 
 .filter-button:hover {
-  background: #f3ecec;
+    background: #f3ecec;
 }
 
 .filter-button:active {
-  background: #C5BABE;
+    background: #C5BABE;
 }
 
 .chosen {
-  background: #E7DEE1;
+    background: #E7DEE1;
 }
 
 .chosen:hover {
-  background: #e0d5d7;
+    background: #e0d5d7;
 }
 
 .chosen:active {
-  background: #c2b6bb;
+    background: #c2b6bb;
 }
 
 .sort-button {
-  cursor: pointer;
-  align-self: start;
-  width: 34px;
-  height: 23px;
-  border: none;
-  background: url("src/assets/img/sort_button.svg") no-repeat;
-  background-size: 34px 23px;
+    cursor: pointer;
+    align-self: start;
+    width: 34px;
+    height: 23px;
+    border: none;
+    background: url("src/assets/img/sort_button.svg") no-repeat;
+    background-size: 34px 23px;
 }
 
 .sort-button:hover {
-  background: url("src/assets/img/sort_button_hover.svg") no-repeat;
-  background-size: 34px 23px;
+    background: url("src/assets/img/sort_button_hover.svg") no-repeat;
+    background-size: 34px 23px;
 }
 
 .sort-button:active {
-  background: url("src/assets/img/sort_button_active.svg") no-repeat;
-  background-size: 34px 23px;
+    background: url("src/assets/img/sort_button_active.svg") no-repeat;
+    background-size: 34px 23px;
 }
 
 .sort-component {
-  position: relative;
-  top: 50px;
-  right: 194px;
+    position: relative;
+    top: 50px;
+    right: 194px;
 }
 
 .open-sort {
-  background: url("src/assets/img/sort_button_hover.svg") no-repeat;
-  background-size: 34px 23px;
+    background: url("src/assets/img/sort_button_hover.svg") no-repeat;
+    background-size: 34px 23px;
 }
 
 .open-sort:hover {
-  background: url("src/assets/img/sort_button_active.svg") no-repeat;
-  background-size: 34px 23px;
+    background: url("src/assets/img/sort_button_active.svg") no-repeat;
+    background-size: 34px 23px;
 }
 
 .open-sort:active {
-  background: url("src/assets/img/sort_button_hover.svg") no-repeat;
-  background-size: 34px 23px;
+    background: url("src/assets/img/sort_button_hover.svg") no-repeat;
+    background-size: 34px 23px;
 }
